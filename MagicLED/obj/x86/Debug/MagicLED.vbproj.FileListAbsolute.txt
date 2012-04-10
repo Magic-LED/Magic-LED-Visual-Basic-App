@@ -16,3 +16,20 @@ C:\Users\Markus\Desktop\MagicLED\MagicLED\obj\x86\Debug\MagicLED.application
 C:\Users\Markus\Desktop\MagicLED\MagicLED\obj\x86\Debug\MagicLED.exe
 C:\Users\Markus\Desktop\MagicLED\MagicLED\obj\x86\Debug\MagicLED.xml
 C:\Users\Markus\Desktop\MagicLED\MagicLED\obj\x86\Debug\MagicLED.pdb
+C:\Users\Markus\My Documents\Github_Work\Magic-LED-Visual-Basic-App\MagicLED\bin\Debug\MagicLED.exe.config
+C:\Users\Markus\My Documents\Github_Work\Magic-LED-Visual-Basic-App\MagicLED\obj\x86\Debug\MagicLED.exe
+C:\Users\Markus\My Documents\Github_Work\Magic-LED-Visual-Basic-App\MagicLED\obj\x86\Debug\MagicLED.xml
+C:\Users\Markus\My Documents\Github_Work\Magic-LED-Visual-Basic-App\MagicLED\obj\x86\Debug\MagicLED.pdb
+C:\Users\Markus\My Documents\Github_Work\Magic-LED-Visual-Basic-App\MagicLED\bin\Debug\MagicLED.exe.manifest
+C:\Users\Markus\My Documents\Github_Work\Magic-LED-Visual-Basic-App\MagicLED\bin\Debug\MagicLED.application
+C:\Users\Markus\My Documents\Github_Work\Magic-LED-Visual-Basic-App\MagicLED\bin\Debug\MagicLED.exe
+C:\Users\Markus\My Documents\Github_Work\Magic-LED-Visual-Basic-App\MagicLED\bin\Debug\MagicLED.pdb
+C:\Users\Markus\My Documents\Github_Work\Magic-LED-Visual-Basic-App\MagicLED\bin\Debug\MagicLED.xml
+C:\Users\Markus\My Documents\Github_Work\Magic-LED-Visual-Basic-App\MagicLED\obj\x86\Debug\ResolveAssemblyReference.cache
+C:\Users\Markus\My Documents\Github_Work\Magic-LED-Visual-Basic-App\MagicLED\obj\x86\Debug\MagicLED.Form1.resources
+C:\Users\Markus\My Documents\Github_Work\Magic-LED-Visual-Basic-App\MagicLED\obj\x86\Debug\MagicLED.Resources.resources
+C:\Users\Markus\My Documents\Github_Work\Magic-LED-Visual-Basic-App\MagicLED\obj\x86\Debug\GenerateResource.read.1.tlog
+C:\Users\Markus\My Documents\Github_Work\Magic-LED-Visual-Basic-App\MagicLED\obj\x86\Debug\GenerateResource.write.1.tlog
+C:\Users\Markus\My Documents\Github_Work\Magic-LED-Visual-Basic-App\MagicLED\obj\x86\Debug\MagicLED.TrustInfo.xml
+C:\Users\Markus\My Documents\Github_Work\Magic-LED-Visual-Basic-App\MagicLED\obj\x86\Debug\MagicLED.exe.manifest
+C:\Users\Markus\My Documents\Github_Work\Magic-LED-Visual-Basic-App\MagicLED\obj\x86\Debug\MagicLED.application

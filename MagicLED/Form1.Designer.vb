@@ -22,6 +22,7 @@ Partial Class Form1
     'Das Bearbeiten mit dem Code-Editor ist nicht möglich.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
+        Me.components = New System.ComponentModel.Container()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(Form1))
         Me.tbctrl_1 = New System.Windows.Forms.TabControl()
         Me.tbpg_Slider = New System.Windows.Forms.TabPage()
@@ -81,8 +82,18 @@ Partial Class Form1
         Me.pgrbr_Effects_Fade = New System.Windows.Forms.ProgressBar()
         Me.btn_Effects_FadeStart = New System.Windows.Forms.Button()
         Me.tbpg_Info = New System.Windows.Forms.TabPage()
-        Me.PictureBox2 = New System.Windows.Forms.PictureBox()
         Me.GroupBox6 = New System.Windows.Forms.GroupBox()
+        Me.PictureBox2 = New System.Windows.Forms.PictureBox()
+        Me.lbl_Info_Version = New System.Windows.Forms.Label()
+        Me.lbl_Info_Copyright = New System.Windows.Forms.Label()
+        Me.lbl_Info_Firma = New System.Windows.Forms.Label()
+        Me.lbl_Info_Beschreibung = New System.Windows.Forms.Label()
+        Me.lbl_Info_Titel = New System.Windows.Forms.Label()
+        Me.Label11 = New System.Windows.Forms.Label()
+        Me.Label7 = New System.Windows.Forms.Label()
+        Me.Label3 = New System.Windows.Forms.Label()
+        Me.Label2 = New System.Windows.Forms.Label()
+        Me.Label1 = New System.Windows.Forms.Label()
         Me.tbpg_Options = New System.Windows.Forms.TabPage()
         Me.GroupBox3 = New System.Windows.Forms.GroupBox()
         Me.btn_ResetOptions = New System.Windows.Forms.Button()
@@ -92,16 +103,8 @@ Partial Class Form1
         Me.cbx_ComPort = New System.Windows.Forms.ComboBox()
         Me.StatusStrip1 = New System.Windows.Forms.StatusStrip()
         Me.lbl_StatusLabel = New System.Windows.Forms.ToolStripStatusLabel()
-        Me.Label1 = New System.Windows.Forms.Label()
-        Me.Label2 = New System.Windows.Forms.Label()
-        Me.Label3 = New System.Windows.Forms.Label()
-        Me.Label7 = New System.Windows.Forms.Label()
-        Me.Label11 = New System.Windows.Forms.Label()
-        Me.lbl_Info_Titel = New System.Windows.Forms.Label()
-        Me.lbl_Info_Beschreibung = New System.Windows.Forms.Label()
-        Me.lbl_Info_Firma = New System.Windows.Forms.Label()
-        Me.lbl_Info_Copyright = New System.Windows.Forms.Label()
-        Me.lbl_Info_Version = New System.Windows.Forms.Label()
+        Me.SerialPort1 = New System.IO.Ports.SerialPort(Me.components)
+        Me.btn_OpenComOptions = New System.Windows.Forms.Button()
         Me.tbctrl_1.SuspendLayout()
         Me.tbpg_Slider.SuspendLayout()
         Me.GroupBox2.SuspendLayout()
@@ -112,8 +115,8 @@ Partial Class Form1
         Me.GroupBox5.SuspendLayout()
         Me.GroupBox4.SuspendLayout()
         Me.tbpg_Info.SuspendLayout()
-        CType(Me.PictureBox2, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.GroupBox6.SuspendLayout()
+        CType(Me.PictureBox2, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.tbpg_Options.SuspendLayout()
         Me.GroupBox3.SuspendLayout()
         Me.StatusStrip1.SuspendLayout()
@@ -865,17 +868,6 @@ Partial Class Form1
         Me.tbpg_Info.TabIndex = 4
         Me.tbpg_Info.Text = "Info"
         '
-        'PictureBox2
-        '
-        Me.PictureBox2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.PictureBox2.Image = Global.MagicLED.My.Resources.Resources.icon_big
-        Me.PictureBox2.Location = New System.Drawing.Point(6, 16)
-        Me.PictureBox2.Name = "PictureBox2"
-        Me.PictureBox2.Size = New System.Drawing.Size(159, 279)
-        Me.PictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
-        Me.PictureBox2.TabIndex = 1
-        Me.PictureBox2.TabStop = False
-        '
         'GroupBox6
         '
         Me.GroupBox6.Controls.Add(Me.PictureBox2)
@@ -896,6 +888,111 @@ Partial Class Form1
         Me.GroupBox6.TabStop = False
         Me.GroupBox6.Text = "Info"
         '
+        'PictureBox2
+        '
+        Me.PictureBox2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.PictureBox2.Image = Global.MagicLED.My.Resources.Resources.icon_big
+        Me.PictureBox2.Location = New System.Drawing.Point(6, 16)
+        Me.PictureBox2.Name = "PictureBox2"
+        Me.PictureBox2.Size = New System.Drawing.Size(159, 279)
+        Me.PictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
+        Me.PictureBox2.TabIndex = 1
+        Me.PictureBox2.TabStop = False
+        '
+        'lbl_Info_Version
+        '
+        Me.lbl_Info_Version.AutoSize = True
+        Me.lbl_Info_Version.Location = New System.Drawing.Point(172, 87)
+        Me.lbl_Info_Version.Name = "lbl_Info_Version"
+        Me.lbl_Info_Version.Size = New System.Drawing.Size(54, 13)
+        Me.lbl_Info_Version.TabIndex = 9
+        Me.lbl_Info_Version.Text = "<Version>"
+        '
+        'lbl_Info_Copyright
+        '
+        Me.lbl_Info_Copyright.AutoSize = True
+        Me.lbl_Info_Copyright.Location = New System.Drawing.Point(172, 263)
+        Me.lbl_Info_Copyright.Name = "lbl_Info_Copyright"
+        Me.lbl_Info_Copyright.Size = New System.Drawing.Size(63, 13)
+        Me.lbl_Info_Copyright.TabIndex = 8
+        Me.lbl_Info_Copyright.Text = "<Copyright>"
+        '
+        'lbl_Info_Firma
+        '
+        Me.lbl_Info_Firma.AutoSize = True
+        Me.lbl_Info_Firma.Location = New System.Drawing.Point(172, 211)
+        Me.lbl_Info_Firma.Name = "lbl_Info_Firma"
+        Me.lbl_Info_Firma.Size = New System.Drawing.Size(44, 13)
+        Me.lbl_Info_Firma.TabIndex = 7
+        Me.lbl_Info_Firma.Text = "<Firma>"
+        '
+        'lbl_Info_Beschreibung
+        '
+        Me.lbl_Info_Beschreibung.Location = New System.Drawing.Point(172, 126)
+        Me.lbl_Info_Beschreibung.Name = "lbl_Info_Beschreibung"
+        Me.lbl_Info_Beschreibung.Size = New System.Drawing.Size(162, 60)
+        Me.lbl_Info_Beschreibung.TabIndex = 6
+        Me.lbl_Info_Beschreibung.Text = "<Beschreibung>"
+        '
+        'lbl_Info_Titel
+        '
+        Me.lbl_Info_Titel.AutoSize = True
+        Me.lbl_Info_Titel.Location = New System.Drawing.Point(171, 32)
+        Me.lbl_Info_Titel.Name = "lbl_Info_Titel"
+        Me.lbl_Info_Titel.Size = New System.Drawing.Size(39, 13)
+        Me.lbl_Info_Titel.TabIndex = 5
+        Me.lbl_Info_Titel.Text = "<Titel>"
+        '
+        'Label11
+        '
+        Me.Label11.AutoSize = True
+        Me.Label11.Font = New System.Drawing.Font("Courier New", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label11.Location = New System.Drawing.Point(172, 246)
+        Me.Label11.Name = "Label11"
+        Me.Label11.Size = New System.Drawing.Size(88, 16)
+        Me.Label11.TabIndex = 4
+        Me.Label11.Text = "Copyright:"
+        '
+        'Label7
+        '
+        Me.Label7.AutoSize = True
+        Me.Label7.Font = New System.Drawing.Font("Courier New", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label7.Location = New System.Drawing.Point(172, 196)
+        Me.Label7.Name = "Label7"
+        Me.Label7.Size = New System.Drawing.Size(56, 16)
+        Me.Label7.TabIndex = 3
+        Me.Label7.Text = "Firma:"
+        '
+        'Label3
+        '
+        Me.Label3.AutoSize = True
+        Me.Label3.Font = New System.Drawing.Font("Courier New", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label3.Location = New System.Drawing.Point(172, 71)
+        Me.Label3.Name = "Label3"
+        Me.Label3.Size = New System.Drawing.Size(72, 16)
+        Me.Label3.TabIndex = 2
+        Me.Label3.Text = "Version:"
+        '
+        'Label2
+        '
+        Me.Label2.AutoSize = True
+        Me.Label2.Font = New System.Drawing.Font("Courier New", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label2.Location = New System.Drawing.Point(172, 110)
+        Me.Label2.Name = "Label2"
+        Me.Label2.Size = New System.Drawing.Size(112, 16)
+        Me.Label2.TabIndex = 1
+        Me.Label2.Text = "Beschreibung:"
+        '
+        'Label1
+        '
+        Me.Label1.AutoSize = True
+        Me.Label1.Font = New System.Drawing.Font("Courier New", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label1.Location = New System.Drawing.Point(171, 16)
+        Me.Label1.Name = "Label1"
+        Me.Label1.Size = New System.Drawing.Size(56, 16)
+        Me.Label1.TabIndex = 0
+        Me.Label1.Text = "Titel:"
+        '
         'tbpg_Options
         '
         Me.tbpg_Options.BackColor = System.Drawing.SystemColors.ControlLightLight
@@ -909,6 +1006,7 @@ Partial Class Form1
         '
         'GroupBox3
         '
+        Me.GroupBox3.Controls.Add(Me.btn_OpenComOptions)
         Me.GroupBox3.Controls.Add(Me.btn_ResetOptions)
         Me.GroupBox3.Controls.Add(Me.Label10)
         Me.GroupBox3.Controls.Add(Me.cbx_BaudRate)
@@ -947,7 +1045,6 @@ Partial Class Form1
         Me.cbx_BaudRate.Name = "cbx_BaudRate"
         Me.cbx_BaudRate.Size = New System.Drawing.Size(121, 21)
         Me.cbx_BaudRate.TabIndex = 2
-        Me.cbx_BaudRate.Text = "115200"
         '
         'Label9
         '
@@ -982,99 +1079,17 @@ Partial Class Form1
         Me.lbl_StatusLabel.Size = New System.Drawing.Size(46, 17)
         Me.lbl_StatusLabel.Text = "Bereit..."
         '
-        'Label1
+        'SerialPort1
         '
-        Me.Label1.AutoSize = True
-        Me.Label1.Font = New System.Drawing.Font("Courier New", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label1.Location = New System.Drawing.Point(171, 16)
-        Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(56, 16)
-        Me.Label1.TabIndex = 0
-        Me.Label1.Text = "Titel:"
         '
-        'Label2
+        'btn_OpenComOptions
         '
-        Me.Label2.AutoSize = True
-        Me.Label2.Font = New System.Drawing.Font("Courier New", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label2.Location = New System.Drawing.Point(172, 110)
-        Me.Label2.Name = "Label2"
-        Me.Label2.Size = New System.Drawing.Size(112, 16)
-        Me.Label2.TabIndex = 1
-        Me.Label2.Text = "Beschreibung:"
-        '
-        'Label3
-        '
-        Me.Label3.AutoSize = True
-        Me.Label3.Font = New System.Drawing.Font("Courier New", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label3.Location = New System.Drawing.Point(172, 71)
-        Me.Label3.Name = "Label3"
-        Me.Label3.Size = New System.Drawing.Size(72, 16)
-        Me.Label3.TabIndex = 2
-        Me.Label3.Text = "Version:"
-        '
-        'Label7
-        '
-        Me.Label7.AutoSize = True
-        Me.Label7.Font = New System.Drawing.Font("Courier New", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label7.Location = New System.Drawing.Point(172, 196)
-        Me.Label7.Name = "Label7"
-        Me.Label7.Size = New System.Drawing.Size(56, 16)
-        Me.Label7.TabIndex = 3
-        Me.Label7.Text = "Firma:"
-        '
-        'Label11
-        '
-        Me.Label11.AutoSize = True
-        Me.Label11.Font = New System.Drawing.Font("Courier New", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label11.Location = New System.Drawing.Point(172, 246)
-        Me.Label11.Name = "Label11"
-        Me.Label11.Size = New System.Drawing.Size(88, 16)
-        Me.Label11.TabIndex = 4
-        Me.Label11.Text = "Copyright:"
-        '
-        'lbl_Info_Titel
-        '
-        Me.lbl_Info_Titel.AutoSize = True
-        Me.lbl_Info_Titel.Location = New System.Drawing.Point(171, 32)
-        Me.lbl_Info_Titel.Name = "lbl_Info_Titel"
-        Me.lbl_Info_Titel.Size = New System.Drawing.Size(39, 13)
-        Me.lbl_Info_Titel.TabIndex = 5
-        Me.lbl_Info_Titel.Text = "<Titel>"
-        '
-        'lbl_Info_Beschreibung
-        '
-        Me.lbl_Info_Beschreibung.Location = New System.Drawing.Point(172, 126)
-        Me.lbl_Info_Beschreibung.Name = "lbl_Info_Beschreibung"
-        Me.lbl_Info_Beschreibung.Size = New System.Drawing.Size(162, 60)
-        Me.lbl_Info_Beschreibung.TabIndex = 6
-        Me.lbl_Info_Beschreibung.Text = "<Beschreibung>"
-        '
-        'lbl_Info_Firma
-        '
-        Me.lbl_Info_Firma.AutoSize = True
-        Me.lbl_Info_Firma.Location = New System.Drawing.Point(172, 211)
-        Me.lbl_Info_Firma.Name = "lbl_Info_Firma"
-        Me.lbl_Info_Firma.Size = New System.Drawing.Size(44, 13)
-        Me.lbl_Info_Firma.TabIndex = 7
-        Me.lbl_Info_Firma.Text = "<Firma>"
-        '
-        'lbl_Info_Copyright
-        '
-        Me.lbl_Info_Copyright.AutoSize = True
-        Me.lbl_Info_Copyright.Location = New System.Drawing.Point(172, 263)
-        Me.lbl_Info_Copyright.Name = "lbl_Info_Copyright"
-        Me.lbl_Info_Copyright.Size = New System.Drawing.Size(63, 13)
-        Me.lbl_Info_Copyright.TabIndex = 8
-        Me.lbl_Info_Copyright.Text = "<Copyright>"
-        '
-        'lbl_Info_Version
-        '
-        Me.lbl_Info_Version.AutoSize = True
-        Me.lbl_Info_Version.Location = New System.Drawing.Point(172, 87)
-        Me.lbl_Info_Version.Name = "lbl_Info_Version"
-        Me.lbl_Info_Version.Size = New System.Drawing.Size(54, 13)
-        Me.lbl_Info_Version.TabIndex = 9
-        Me.lbl_Info_Version.Text = "<Version>"
+        Me.btn_OpenComOptions.Location = New System.Drawing.Point(22, 155)
+        Me.btn_OpenComOptions.Name = "btn_OpenComOptions"
+        Me.btn_OpenComOptions.Size = New System.Drawing.Size(75, 23)
+        Me.btn_OpenComOptions.TabIndex = 5
+        Me.btn_OpenComOptions.Text = "Öffnen"
+        Me.btn_OpenComOptions.UseVisualStyleBackColor = True
         '
         'Form1
         '
@@ -1100,9 +1115,9 @@ Partial Class Form1
         Me.GroupBox4.ResumeLayout(False)
         Me.GroupBox4.PerformLayout()
         Me.tbpg_Info.ResumeLayout(False)
-        CType(Me.PictureBox2, System.ComponentModel.ISupportInitialize).EndInit()
         Me.GroupBox6.ResumeLayout(False)
         Me.GroupBox6.PerformLayout()
+        CType(Me.PictureBox2, System.ComponentModel.ISupportInitialize).EndInit()
         Me.tbpg_Options.ResumeLayout(False)
         Me.GroupBox3.ResumeLayout(False)
         Me.GroupBox3.PerformLayout()
@@ -1191,5 +1206,7 @@ Partial Class Form1
     Friend WithEvents Label7 As System.Windows.Forms.Label
     Friend WithEvents Label3 As System.Windows.Forms.Label
     Friend WithEvents Label2 As System.Windows.Forms.Label
+    Friend WithEvents SerialPort1 As System.IO.Ports.SerialPort
+    Friend WithEvents btn_OpenComOptions As System.Windows.Forms.Button
 
 End Class
