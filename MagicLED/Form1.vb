@@ -27,7 +27,7 @@ Public Class Form1
         cbx_BaudrateOptions.Text = SerialPort1.BaudRate
 
         lbl_Info_Titel.Text = My.Application.Info.Title
-        lbl_Info_Version.Text = My.Application.Info.Version.Major & "." & My.Application.Info.Version.Minor
+        lbl_Info_Version.Text = My.Application.Info.Version.Major & "." & My.Application.Info.Version.Minor & "." & My.Application.Info.Version.Build
         lbl_Info_Beschreibung.Text = My.Application.Info.Description
         lbl_Info_Firma.Text = My.Application.Info.CompanyName
         lbl_Info_Copyright.Text = My.Application.Info.Copyright
