@@ -43,6 +43,7 @@ Partial Class Form1
         Me.Label4 = New System.Windows.Forms.Label()
         Me.tbpg_Colors = New System.Windows.Forms.TabPage()
         Me.GroupBox1 = New System.Windows.Forms.GroupBox()
+        Me.rbtn_Colors_black = New System.Windows.Forms.RadioButton()
         Me.lbl_Colors_Alpha = New System.Windows.Forms.Label()
         Me.sldr_Colors_Alpha = New MB.Controls.ColorSlider()
         Me.rbtn_Colors_white = New System.Windows.Forms.RadioButton()
@@ -96,15 +97,16 @@ Partial Class Form1
         Me.Label1 = New System.Windows.Forms.Label()
         Me.tbpg_Options = New System.Windows.Forms.TabPage()
         Me.GroupBox3 = New System.Windows.Forms.GroupBox()
+        Me.cbx_BaudrateOptions = New System.Windows.Forms.ComboBox()
+        Me.cbx_ComportOptions = New System.Windows.Forms.ComboBox()
+        Me.btn_SaveOptions = New System.Windows.Forms.Button()
+        Me.btn_OpenComOptions = New System.Windows.Forms.Button()
         Me.btn_ResetOptions = New System.Windows.Forms.Button()
         Me.Label10 = New System.Windows.Forms.Label()
-        Me.cbx_BaudRate = New System.Windows.Forms.ComboBox()
         Me.Label9 = New System.Windows.Forms.Label()
-        Me.cbx_ComPort = New System.Windows.Forms.ComboBox()
         Me.StatusStrip1 = New System.Windows.Forms.StatusStrip()
         Me.lbl_StatusLabel = New System.Windows.Forms.ToolStripStatusLabel()
         Me.SerialPort1 = New System.IO.Ports.SerialPort(Me.components)
-        Me.btn_OpenComOptions = New System.Windows.Forms.Button()
         Me.tbctrl_1.SuspendLayout()
         Me.tbpg_Slider.SuspendLayout()
         Me.GroupBox2.SuspendLayout()
@@ -210,7 +212,7 @@ Partial Class Form1
         Me.lbl_Slider_Alpha.Name = "lbl_Slider_Alpha"
         Me.lbl_Slider_Alpha.Size = New System.Drawing.Size(53, 33)
         Me.lbl_Slider_Alpha.TabIndex = 33
-        Me.lbl_Slider_Alpha.Text = "0"
+        Me.lbl_Slider_Alpha.Text = "255"
         Me.lbl_Slider_Alpha.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
         '
         'sldr_Slider_Alpha
@@ -224,7 +226,7 @@ Partial Class Form1
         Me.sldr_Slider_Alpha.ElapsedOuterColor = System.Drawing.Color.Orange
         Me.sldr_Slider_Alpha.LargeChange = CType(5UI, UInteger)
         Me.sldr_Slider_Alpha.Location = New System.Drawing.Point(115, 128)
-        Me.sldr_Slider_Alpha.Maximum = 20
+        Me.sldr_Slider_Alpha.Maximum = 255
         Me.sldr_Slider_Alpha.Minimum = 5
         Me.sldr_Slider_Alpha.Name = "sldr_Slider_Alpha"
         Me.sldr_Slider_Alpha.RightToLeft = System.Windows.Forms.RightToLeft.Yes
@@ -233,7 +235,7 @@ Partial Class Form1
         Me.sldr_Slider_Alpha.TabIndex = 32
         Me.sldr_Slider_Alpha.Text = "ColorSlider7"
         Me.sldr_Slider_Alpha.ThumbRoundRectSize = New System.Drawing.Size(8, 8)
-        Me.sldr_Slider_Alpha.Value = 5
+        Me.sldr_Slider_Alpha.Value = 255
         '
         'sldr_Slider_Red
         '
@@ -365,6 +367,7 @@ Partial Class Form1
         '
         'GroupBox1
         '
+        Me.GroupBox1.Controls.Add(Me.rbtn_Colors_black)
         Me.GroupBox1.Controls.Add(Me.lbl_Colors_Alpha)
         Me.GroupBox1.Controls.Add(Me.sldr_Colors_Alpha)
         Me.GroupBox1.Controls.Add(Me.rbtn_Colors_white)
@@ -385,6 +388,20 @@ Partial Class Form1
         Me.GroupBox1.TabStop = False
         Me.GroupBox1.Text = "Colors"
         '
+        'rbtn_Colors_black
+        '
+        Me.rbtn_Colors_black.BackColor = System.Drawing.Color.Transparent
+        Me.rbtn_Colors_black.BackgroundImage = Global.MagicLED.My.Resources.Resources.button_black
+        Me.rbtn_Colors_black.Location = New System.Drawing.Point(216, 55)
+        Me.rbtn_Colors_black.Name = "rbtn_Colors_black"
+        Me.rbtn_Colors_black.Padding = New System.Windows.Forms.Padding(11, 0, 0, 0)
+        Me.rbtn_Colors_black.Size = New System.Drawing.Size(80, 30)
+        Me.rbtn_Colors_black.TabIndex = 31
+        Me.rbtn_Colors_black.Text = "  "
+        Me.rbtn_Colors_black.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
+        Me.rbtn_Colors_black.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage
+        Me.rbtn_Colors_black.UseVisualStyleBackColor = False
+        '
         'lbl_Colors_Alpha
         '
         Me.lbl_Colors_Alpha.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D
@@ -393,7 +410,7 @@ Partial Class Form1
         Me.lbl_Colors_Alpha.Name = "lbl_Colors_Alpha"
         Me.lbl_Colors_Alpha.Size = New System.Drawing.Size(53, 33)
         Me.lbl_Colors_Alpha.TabIndex = 30
-        Me.lbl_Colors_Alpha.Text = "0"
+        Me.lbl_Colors_Alpha.Text = "255"
         Me.lbl_Colors_Alpha.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
         '
         'sldr_Colors_Alpha
@@ -407,7 +424,7 @@ Partial Class Form1
         Me.sldr_Colors_Alpha.ElapsedOuterColor = System.Drawing.Color.Orange
         Me.sldr_Colors_Alpha.LargeChange = CType(5UI, UInteger)
         Me.sldr_Colors_Alpha.Location = New System.Drawing.Point(130, 181)
-        Me.sldr_Colors_Alpha.Maximum = 20
+        Me.sldr_Colors_Alpha.Maximum = 255
         Me.sldr_Colors_Alpha.Minimum = 5
         Me.sldr_Colors_Alpha.Name = "sldr_Colors_Alpha"
         Me.sldr_Colors_Alpha.RightToLeft = System.Windows.Forms.RightToLeft.Yes
@@ -416,7 +433,7 @@ Partial Class Form1
         Me.sldr_Colors_Alpha.TabIndex = 29
         Me.sldr_Colors_Alpha.Text = "ColorSlider4"
         Me.sldr_Colors_Alpha.ThumbRoundRectSize = New System.Drawing.Size(8, 8)
-        Me.sldr_Colors_Alpha.Value = 5
+        Me.sldr_Colors_Alpha.Value = 255
         '
         'rbtn_Colors_white
         '
@@ -617,7 +634,7 @@ Partial Class Form1
         Me.lbl_Effects_FlashDelay.Name = "lbl_Effects_FlashDelay"
         Me.lbl_Effects_FlashDelay.Size = New System.Drawing.Size(53, 20)
         Me.lbl_Effects_FlashDelay.TabIndex = 19
-        Me.lbl_Effects_FlashDelay.Text = "0"
+        Me.lbl_Effects_FlashDelay.Text = "20"
         Me.lbl_Effects_FlashDelay.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
         '
         'sldr_Effects_Flash_Delay
@@ -640,7 +657,7 @@ Partial Class Form1
         Me.sldr_Effects_Flash_Delay.TabIndex = 19
         Me.sldr_Effects_Flash_Delay.Text = "ColorSlider6"
         Me.sldr_Effects_Flash_Delay.ThumbRoundRectSize = New System.Drawing.Size(8, 8)
-        Me.sldr_Effects_Flash_Delay.Value = 5
+        Me.sldr_Effects_Flash_Delay.Value = 20
         '
         'chkbx_Effects_Flash_white
         '
@@ -810,7 +827,7 @@ Partial Class Form1
         Me.sldr_Effects_Fade_Delay.TabIndex = 18
         Me.sldr_Effects_Fade_Delay.Text = "ColorSlider5"
         Me.sldr_Effects_Fade_Delay.ThumbRoundRectSize = New System.Drawing.Size(8, 8)
-        Me.sldr_Effects_Fade_Delay.Value = 5
+        Me.sldr_Effects_Fade_Delay.Value = 20
         '
         'btn_Effects_FadeStop
         '
@@ -838,7 +855,7 @@ Partial Class Form1
         Me.lbl_Effects_FadeDelay.Name = "lbl_Effects_FadeDelay"
         Me.lbl_Effects_FadeDelay.Size = New System.Drawing.Size(53, 20)
         Me.lbl_Effects_FadeDelay.TabIndex = 15
-        Me.lbl_Effects_FadeDelay.Text = "0"
+        Me.lbl_Effects_FadeDelay.Text = "20"
         Me.lbl_Effects_FadeDelay.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
         '
         'pgrbr_Effects_Fade
@@ -995,7 +1012,7 @@ Partial Class Form1
         '
         'tbpg_Options
         '
-        Me.tbpg_Options.BackColor = System.Drawing.SystemColors.ControlLightLight
+        Me.tbpg_Options.BackColor = System.Drawing.SystemColors.Control
         Me.tbpg_Options.Controls.Add(Me.GroupBox3)
         Me.tbpg_Options.Location = New System.Drawing.Point(4, 22)
         Me.tbpg_Options.Name = "tbpg_Options"
@@ -1006,18 +1023,55 @@ Partial Class Form1
         '
         'GroupBox3
         '
+        Me.GroupBox3.Controls.Add(Me.cbx_BaudrateOptions)
+        Me.GroupBox3.Controls.Add(Me.cbx_ComportOptions)
+        Me.GroupBox3.Controls.Add(Me.btn_SaveOptions)
         Me.GroupBox3.Controls.Add(Me.btn_OpenComOptions)
         Me.GroupBox3.Controls.Add(Me.btn_ResetOptions)
         Me.GroupBox3.Controls.Add(Me.Label10)
-        Me.GroupBox3.Controls.Add(Me.cbx_BaudRate)
         Me.GroupBox3.Controls.Add(Me.Label9)
-        Me.GroupBox3.Controls.Add(Me.cbx_ComPort)
         Me.GroupBox3.Location = New System.Drawing.Point(16, 20)
         Me.GroupBox3.Name = "GroupBox3"
         Me.GroupBox3.Size = New System.Drawing.Size(340, 295)
         Me.GroupBox3.TabIndex = 1
         Me.GroupBox3.TabStop = False
         Me.GroupBox3.Text = "Options"
+        '
+        'cbx_BaudrateOptions
+        '
+        Me.cbx_BaudrateOptions.FormattingEnabled = True
+        Me.cbx_BaudrateOptions.Items.AddRange(New Object() {"9600", "115200"})
+        Me.cbx_BaudrateOptions.Location = New System.Drawing.Point(149, 43)
+        Me.cbx_BaudrateOptions.Name = "cbx_BaudrateOptions"
+        Me.cbx_BaudrateOptions.Size = New System.Drawing.Size(121, 21)
+        Me.cbx_BaudrateOptions.TabIndex = 8
+        '
+        'cbx_ComportOptions
+        '
+        Me.cbx_ComportOptions.FormattingEnabled = True
+        Me.cbx_ComportOptions.Location = New System.Drawing.Point(22, 43)
+        Me.cbx_ComportOptions.Name = "cbx_ComportOptions"
+        Me.cbx_ComportOptions.Size = New System.Drawing.Size(121, 21)
+        Me.cbx_ComportOptions.TabIndex = 7
+        '
+        'btn_SaveOptions
+        '
+        Me.btn_SaveOptions.Location = New System.Drawing.Point(149, 85)
+        Me.btn_SaveOptions.Name = "btn_SaveOptions"
+        Me.btn_SaveOptions.Size = New System.Drawing.Size(121, 27)
+        Me.btn_SaveOptions.TabIndex = 6
+        Me.btn_SaveOptions.Text = "Speichern"
+        Me.btn_SaveOptions.UseVisualStyleBackColor = True
+        '
+        'btn_OpenComOptions
+        '
+        Me.btn_OpenComOptions.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btn_OpenComOptions.Location = New System.Drawing.Point(22, 85)
+        Me.btn_OpenComOptions.Name = "btn_OpenComOptions"
+        Me.btn_OpenComOptions.Size = New System.Drawing.Size(121, 27)
+        Me.btn_OpenComOptions.TabIndex = 5
+        Me.btn_OpenComOptions.Text = "Verbinden"
+        Me.btn_OpenComOptions.UseVisualStyleBackColor = True
         '
         'btn_ResetOptions
         '
@@ -1031,20 +1085,11 @@ Partial Class Form1
         'Label10
         '
         Me.Label10.AutoSize = True
-        Me.Label10.Location = New System.Drawing.Point(19, 82)
+        Me.Label10.Location = New System.Drawing.Point(146, 27)
         Me.Label10.Name = "Label10"
         Me.Label10.Size = New System.Drawing.Size(50, 13)
         Me.Label10.TabIndex = 3
         Me.Label10.Text = "Bautrate:"
-        '
-        'cbx_BaudRate
-        '
-        Me.cbx_BaudRate.FormattingEnabled = True
-        Me.cbx_BaudRate.Items.AddRange(New Object() {"300", "1200", "2400", "4800", "9600", "14400", "19200", "28800", "38400", "57600", "115200"})
-        Me.cbx_BaudRate.Location = New System.Drawing.Point(22, 98)
-        Me.cbx_BaudRate.Name = "cbx_BaudRate"
-        Me.cbx_BaudRate.Size = New System.Drawing.Size(121, 21)
-        Me.cbx_BaudRate.TabIndex = 2
         '
         'Label9
         '
@@ -1055,18 +1100,10 @@ Partial Class Form1
         Me.Label9.TabIndex = 1
         Me.Label9.Text = "Comport:"
         '
-        'cbx_ComPort
-        '
-        Me.cbx_ComPort.FormattingEnabled = True
-        Me.cbx_ComPort.Location = New System.Drawing.Point(22, 43)
-        Me.cbx_ComPort.Name = "cbx_ComPort"
-        Me.cbx_ComPort.Size = New System.Drawing.Size(121, 21)
-        Me.cbx_ComPort.TabIndex = 0
-        '
         'StatusStrip1
         '
         Me.StatusStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.lbl_StatusLabel})
-        Me.StatusStrip1.Location = New System.Drawing.Point(0, 383)
+        Me.StatusStrip1.Location = New System.Drawing.Point(0, 379)
         Me.StatusStrip1.Name = "StatusStrip1"
         Me.StatusStrip1.RenderMode = System.Windows.Forms.ToolStripRenderMode.ManagerRenderMode
         Me.StatusStrip1.Size = New System.Drawing.Size(404, 22)
@@ -1076,26 +1113,19 @@ Partial Class Form1
         'lbl_StatusLabel
         '
         Me.lbl_StatusLabel.Name = "lbl_StatusLabel"
-        Me.lbl_StatusLabel.Size = New System.Drawing.Size(46, 17)
+        Me.lbl_StatusLabel.Size = New System.Drawing.Size(47, 17)
         Me.lbl_StatusLabel.Text = "Bereit..."
         '
         'SerialPort1
         '
-        '
-        'btn_OpenComOptions
-        '
-        Me.btn_OpenComOptions.Location = New System.Drawing.Point(22, 155)
-        Me.btn_OpenComOptions.Name = "btn_OpenComOptions"
-        Me.btn_OpenComOptions.Size = New System.Drawing.Size(75, 23)
-        Me.btn_OpenComOptions.TabIndex = 5
-        Me.btn_OpenComOptions.Text = "Öffnen"
-        Me.btn_OpenComOptions.UseVisualStyleBackColor = True
+        Me.SerialPort1.DtrEnable = True
+        Me.SerialPort1.RtsEnable = True
         '
         'Form1
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(404, 405)
+        Me.ClientSize = New System.Drawing.Size(404, 401)
         Me.Controls.Add(Me.StatusStrip1)
         Me.Controls.Add(Me.tbctrl_1)
         Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
@@ -1132,9 +1162,7 @@ Partial Class Form1
     Friend WithEvents GroupBox3 As System.Windows.Forms.GroupBox
     Friend WithEvents btn_ResetOptions As System.Windows.Forms.Button
     Friend WithEvents Label10 As System.Windows.Forms.Label
-    Friend WithEvents cbx_BaudRate As System.Windows.Forms.ComboBox
     Friend WithEvents Label9 As System.Windows.Forms.Label
-    Friend WithEvents cbx_ComPort As System.Windows.Forms.ComboBox
     Friend WithEvents tbpg_Slider As System.Windows.Forms.TabPage
     Friend WithEvents GroupBox2 As System.Windows.Forms.GroupBox
     Friend WithEvents sldr_Slider_Alpha As MB.Controls.ColorSlider
@@ -1208,5 +1236,9 @@ Partial Class Form1
     Friend WithEvents Label2 As System.Windows.Forms.Label
     Friend WithEvents SerialPort1 As System.IO.Ports.SerialPort
     Friend WithEvents btn_OpenComOptions As System.Windows.Forms.Button
+    Friend WithEvents btn_SaveOptions As System.Windows.Forms.Button
+    Friend WithEvents cbx_BaudrateOptions As System.Windows.Forms.ComboBox
+    Friend WithEvents cbx_ComportOptions As System.Windows.Forms.ComboBox
+    Friend WithEvents rbtn_Colors_black As System.Windows.Forms.RadioButton
 
 End Class

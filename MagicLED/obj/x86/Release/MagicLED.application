@@ -8,14 +8,14 @@
     <framework targetVersion="4.0" profile="Full" supportedRuntime="4.0.30319" />
   </compatibleFrameworks>
   <dependency>
-    <dependentAssembly dependencyType="install" codebase="MagicLED.exe.manifest" size="5332">
+    <dependentAssembly dependencyType="install" codebase="MagicLED.exe.manifest" size="5733">
       <assemblyIdentity name="MagicLED.exe" version="1.0.0.0" publicKeyToken="0000000000000000" language="neutral" processorArchitecture="x86" type="win32" />
       <hash>
         <dsig:Transforms>
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
-        <dsig:DigestValue>Mmze4pWdT05aHKDofra3P1oah98=</dsig:DigestValue>
+        <dsig:DigestValue>07CYKPGe6TPcy3g1c12hGpc8oa4=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>

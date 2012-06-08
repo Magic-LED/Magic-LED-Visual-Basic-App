@@ -55,17 +55,26 @@
     </dependentAssembly>
   </dependency>
   <dependency>
-    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="MagicLED.exe" size="142336">
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="MagicLED.exe" size="146944">
       <assemblyIdentity name="MagicLED" version="1.0.0.0" language="neutral" processorArchitecture="x86" />
       <hash>
         <dsig:Transforms>
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
-        <dsig:DigestValue>zy8pZ0d5FhQvdZo2jwZBgF1ocCk=</dsig:DigestValue>
+        <dsig:DigestValue>qffwwIVy3Nd2wPtuA4kY/ThVDm0=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
+  <file name="config.xml" size="135" writeableType="applicationData">
+    <hash>
+      <dsig:Transforms>
+        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+      </dsig:Transforms>
+      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
+      <dsig:DigestValue>rWldqhM8MI9fhonzrK5K/61x84k=</dsig:DigestValue>
+    </hash>
+  </file>
   <file name="icon_2.ico" size="16958">
     <hash>
       <dsig:Transforms>
@@ -75,13 +84,13 @@
       <dsig:DigestValue>mJoWKCBsslpRMceghoz6YABD74U=</dsig:DigestValue>
     </hash>
   </file>
-  <file name="MagicLED.exe.config" size="2225">
+  <file name="MagicLED.exe.config" size="2232">
     <hash>
       <dsig:Transforms>
         <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
       </dsig:Transforms>
       <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
-      <dsig:DigestValue>10NxgqSstD4f2AyNqL39Ivs9WVw=</dsig:DigestValue>
+      <dsig:DigestValue>CU07qX6W2UuntRtYSr/yxRew5iA=</dsig:DigestValue>
     </hash>
   </file>
   <compatibility xmlns="urn:schemas-microsoft-com:compatibility.v1">
