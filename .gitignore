@@ -1,6 +1,8 @@
+$ cat .gitignore
+
 # Build and Object Folders
-bin/
-obj/
+bin/**/*
+obj/**/*
 
 #User Specific Files
 *.user
