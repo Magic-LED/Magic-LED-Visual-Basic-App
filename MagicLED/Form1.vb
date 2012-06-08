@@ -26,11 +26,6 @@ Public Class Form1
         cbx_ComportOptions.Text = SerialPort1.PortName
         cbx_BaudrateOptions.Text = SerialPort1.BaudRate
 
-        tbpg_Slider.Enabled = False
-        tbpg_Info.Enabled = False
-        tbpg_Effects.Enabled = False
-        tbpg_Colors.Enabled = False
-
         lbl_Info_Titel.Text = My.Application.Info.Title
         lbl_Info_Version.Text = My.Application.Info.Version.Major & "." & My.Application.Info.Version.Minor
         lbl_Info_Beschreibung.Text = My.Application.Info.Description
@@ -177,8 +172,10 @@ Public Class Form1
 
     Private Sub sendCommand(ByVal Command As String, ByVal CommandLength As Integer)
         Try
-            Control.CheckForIllegalCrossThreadCalls = False
-            SerialPort1.Write(Command, 0, CommandLength)
+            If SerialPort1.IsOpen Then
+                Control.CheckForIllegalCrossThreadCalls = False
+                SerialPort1.Write(Command, 0, CommandLength)
+            End If
         Catch ex As Exception
         End Try
     End Sub
@@ -213,17 +210,9 @@ Public Class Form1
             If SerialPort1.IsOpen = False Then
                 SerialPort1.Open()
                 btn_OpenComOptions.Text = "Trennen"
-                tbpg_Slider.Enabled = True
-                tbpg_Info.Enabled = True
-                tbpg_Effects.Enabled = True
-                tbpg_Colors.Enabled = True
             Else
                 SerialPort1.Close()
                 btn_OpenComOptions.Text = "Verbinden"
-                tbpg_Slider.Enabled = False
-                tbpg_Info.Enabled = False
-                tbpg_Effects.Enabled = False
-                tbpg_Colors.Enabled = False
             End If
         Catch ex As Exception
             MsgBox(ex.Message.ToString())

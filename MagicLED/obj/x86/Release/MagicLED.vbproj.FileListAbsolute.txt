@@ -16,12 +16,9 @@ C:\Users\Markus\Desktop\MagicLED\MagicLED\obj\x86\Release\MagicLED.application
 C:\Users\Markus\Desktop\MagicLED\MagicLED\obj\x86\Release\MagicLED.exe
 C:\Users\Markus\Desktop\MagicLED\MagicLED\obj\x86\Release\MagicLED.xml
 C:\Users\Markus\Desktop\MagicLED\MagicLED\obj\x86\Release\MagicLED.pdb
-C:\Users\markus\Documents\GitHub\Magic-LED-Visual-Basic-App\MagicLED\bin\Release\MagicLED.exe.config
-C:\Users\markus\Documents\GitHub\Magic-LED-Visual-Basic-App\MagicLED\obj\x86\Release\MagicLED.exe
-C:\Users\markus\Documents\GitHub\Magic-LED-Visual-Basic-App\MagicLED\obj\x86\Release\MagicLED.xml
-C:\Users\markus\Documents\GitHub\Magic-LED-Visual-Basic-App\MagicLED\obj\x86\Release\MagicLED.pdb
-C:\Users\markus\Documents\GitHub\Magic-LED-Visual-Basic-App\MagicLED\bin\Release\config.xml
 C:\Users\markus\Documents\GitHub\Magic-LED-Visual-Basic-App\MagicLED\bin\Release\icon_2.ico
+C:\Users\markus\Documents\GitHub\Magic-LED-Visual-Basic-App\MagicLED\bin\Release\config.xml
+C:\Users\markus\Documents\GitHub\Magic-LED-Visual-Basic-App\MagicLED\bin\Release\MagicLED.exe.config
 C:\Users\markus\Documents\GitHub\Magic-LED-Visual-Basic-App\MagicLED\bin\Release\MagicLED.exe.manifest
 C:\Users\markus\Documents\GitHub\Magic-LED-Visual-Basic-App\MagicLED\bin\Release\MagicLED.application
 C:\Users\markus\Documents\GitHub\Magic-LED-Visual-Basic-App\MagicLED\bin\Release\MagicLED.exe
@@ -35,3 +32,6 @@ C:\Users\markus\Documents\GitHub\Magic-LED-Visual-Basic-App\MagicLED\obj\x86\Rel
 C:\Users\markus\Documents\GitHub\Magic-LED-Visual-Basic-App\MagicLED\obj\x86\Release\MagicLED.TrustInfo.xml
 C:\Users\markus\Documents\GitHub\Magic-LED-Visual-Basic-App\MagicLED\obj\x86\Release\MagicLED.exe.manifest
 C:\Users\markus\Documents\GitHub\Magic-LED-Visual-Basic-App\MagicLED\obj\x86\Release\MagicLED.application
+C:\Users\markus\Documents\GitHub\Magic-LED-Visual-Basic-App\MagicLED\obj\x86\Release\MagicLED.exe
+C:\Users\markus\Documents\GitHub\Magic-LED-Visual-Basic-App\MagicLED\obj\x86\Release\MagicLED.xml
+C:\Users\markus\Documents\GitHub\Magic-LED-Visual-Basic-App\MagicLED\obj\x86\Release\MagicLED.pdb
