@@ -82,7 +82,7 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="ColorSlider">
-      <HintPath>..\..\ColorSlider.dll</HintPath>
+      <HintPath>..\..\..\..\Desktop\ColorSlider.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Data" />

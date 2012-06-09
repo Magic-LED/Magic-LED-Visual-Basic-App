@@ -35,3 +35,4 @@ C:\Users\markus\Documents\GitHub\Magic-LED-Visual-Basic-App\MagicLED\obj\x86\Rel
 C:\Users\markus\Documents\GitHub\Magic-LED-Visual-Basic-App\MagicLED\obj\x86\Release\MagicLED.exe
 C:\Users\markus\Documents\GitHub\Magic-LED-Visual-Basic-App\MagicLED\obj\x86\Release\MagicLED.xml
 C:\Users\markus\Documents\GitHub\Magic-LED-Visual-Basic-App\MagicLED\obj\x86\Release\MagicLED.pdb
+C:\Users\markus\Documents\GitHub\Magic-LED-Visual-Basic-App\MagicLED\bin\Release\ColorSlider.dll

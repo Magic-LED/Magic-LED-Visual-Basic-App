@@ -43,14 +43,14 @@
     </dependentAssembly>
   </dependency>
   <dependency>
-    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="ColorSlider.dll" size="22016">
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="ColorSlider.dll" size="22528">
       <assemblyIdentity name="ColorSlider" version="1.0.0.0" language="neutral" processorArchitecture="msil" />
       <hash>
         <dsig:Transforms>
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
-        <dsig:DigestValue>CySHjj7Cmr6GBOhWnivg9gbwcJc=</dsig:DigestValue>
+        <dsig:DigestValue>hty4Pggj//Tp7m1Afjytxz4KcRY=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
@@ -62,7 +62,7 @@
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
-        <dsig:DigestValue>IhkOoYlALIkk0CroOvKIza9f8L4=</dsig:DigestValue>
+        <dsig:DigestValue>lBEIHesl7zguWLMz8sXpejm7C2E=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
