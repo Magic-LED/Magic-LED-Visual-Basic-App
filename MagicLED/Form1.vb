@@ -134,11 +134,21 @@ Public Class Form1
 
     Private Sub sldr_Effects_Fade_Delay_Scroll(ByVal sender As System.Object, ByVal e As System.Windows.Forms.ScrollEventArgs) Handles sldr_Effects_Fade_Delay.Scroll
         lbl_Effects_FadeDelay.Text = sldr_Effects_Fade_Delay.Value
+        sendSliderCommand(sldr_Effects_Fade_Delay, "FS")
     End Sub
 
     Private Sub btn_RestEffectsFade_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btn_RestEffectsFade.Click
         sldr_Effects_Fade_Delay.Value = sldr_Effects_Fade_Delay.Maximum
-        pgrbr_Effects_Fade.Value = pgrbr_Effects_Fade.Minimum
+    End Sub
+
+    Private Sub btn_Effects_FadeStart_Click(sender As System.Object, e As System.EventArgs) Handles btn_Effects_FadeStart.Click
+        sendCommand("TE01F", 5)
+        sldr_Effects_Fade_Delay.Enabled = False
+    End Sub
+
+    Private Sub btn_Effects_FadeStop_Click(sender As System.Object, e As System.EventArgs) Handles btn_Effects_FadeStop.Click
+        sendCommand("TE00F", 5)
+        sldr_Effects_Fade_Delay.Enabled = True
     End Sub
 
 #End Region
@@ -151,6 +161,14 @@ Public Class Form1
 
     Private Sub CheckFlashColors()
 
+    End Sub
+
+    Private Sub btn_Effects_FlashStart_Click(sender As System.Object, e As System.EventArgs) Handles btn_Effects_FlashStart.Click
+        sldr_Effects_Flash_Delay.Enabled = False
+    End Sub
+
+    Private Sub btn_Effects_FlashStop_Click(sender As System.Object, e As System.EventArgs) Handles btn_Effects_FlashStop.Click
+        sldr_Effects_Flash_Delay.Enabled = True
     End Sub
 
     Private Sub btn_RestEffectsFlash_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btn_RestEffectsFlash.Click
@@ -181,16 +199,16 @@ Public Class Form1
         End Try
     End Sub
 
-    Private Sub sendSliderCommand(ByVal Slider As System.Object, ByVal Farbe As String)
+    Private Sub sendSliderCommand(ByVal Slider As System.Object, ByVal Command As String)
         If (Slider.Value < 100 And Slider.Value > 10) Then
-            sendCommand(Farbe & "0" & Slider.Value, 5)
-            lbl_StatusLabel.Text = Farbe & "0" & Slider.Value
+            sendCommand(Command & "0" & Slider.Value, 5)
+            lbl_StatusLabel.Text = Command & "0" & Slider.Value
         ElseIf (Slider.Value < 10) Then
-            sendCommand(Farbe & "00" & Slider.Value, 5)
-            lbl_StatusLabel.Text = Farbe & "00" & Slider.Value
+            sendCommand(Command & "00" & Slider.Value, 5)
+            lbl_StatusLabel.Text = Command & "00" & Slider.Value
         Else
-            sendCommand(Farbe & Slider.Value, 5)
-            lbl_StatusLabel.Text = Farbe & Slider.Value
+            sendCommand(Command & Slider.Value, 5)
+            lbl_StatusLabel.Text = Command & Slider.Value
         End If
     End Sub
 
@@ -232,7 +250,5 @@ Public Class Form1
     End Sub
 
 #End Region
-
-
 
 End Class

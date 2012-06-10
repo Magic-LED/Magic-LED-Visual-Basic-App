@@ -75,12 +75,10 @@ Partial Class Form1
         Me.Label15 = New System.Windows.Forms.Label()
         Me.btn_Effects_FlashStart = New System.Windows.Forms.Button()
         Me.GroupBox4 = New System.Windows.Forms.GroupBox()
-        Me.btn_RestEffectsFade = New System.Windows.Forms.Button()
         Me.sldr_Effects_Fade_Delay = New MB.Controls.ColorSlider()
         Me.btn_Effects_FadeStop = New System.Windows.Forms.Button()
         Me.Label14 = New System.Windows.Forms.Label()
         Me.lbl_Effects_FadeDelay = New System.Windows.Forms.Label()
-        Me.pgrbr_Effects_Fade = New System.Windows.Forms.ProgressBar()
         Me.btn_Effects_FadeStart = New System.Windows.Forms.Button()
         Me.tbpg_Info = New System.Windows.Forms.TabPage()
         Me.GroupBox6 = New System.Windows.Forms.GroupBox()
@@ -107,6 +105,7 @@ Partial Class Form1
         Me.StatusStrip1 = New System.Windows.Forms.StatusStrip()
         Me.lbl_StatusLabel = New System.Windows.Forms.ToolStripStatusLabel()
         Me.SerialPort1 = New System.IO.Ports.SerialPort(Me.components)
+        Me.btn_RestEffectsFade = New System.Windows.Forms.Button()
         Me.tbctrl_1.SuspendLayout()
         Me.tbpg_Slider.SuspendLayout()
         Me.GroupBox2.SuspendLayout()
@@ -789,7 +788,6 @@ Partial Class Form1
         Me.GroupBox4.Controls.Add(Me.btn_Effects_FadeStop)
         Me.GroupBox4.Controls.Add(Me.Label14)
         Me.GroupBox4.Controls.Add(Me.lbl_Effects_FadeDelay)
-        Me.GroupBox4.Controls.Add(Me.pgrbr_Effects_Fade)
         Me.GroupBox4.Controls.Add(Me.btn_Effects_FadeStart)
         Me.GroupBox4.Location = New System.Drawing.Point(16, 20)
         Me.GroupBox4.Name = "GroupBox4"
@@ -797,15 +795,6 @@ Partial Class Form1
         Me.GroupBox4.TabIndex = 0
         Me.GroupBox4.TabStop = False
         Me.GroupBox4.Text = "Fade"
-        '
-        'btn_RestEffectsFade
-        '
-        Me.btn_RestEffectsFade.Location = New System.Drawing.Point(184, 19)
-        Me.btn_RestEffectsFade.Name = "btn_RestEffectsFade"
-        Me.btn_RestEffectsFade.Size = New System.Drawing.Size(52, 20)
-        Me.btn_RestEffectsFade.TabIndex = 19
-        Me.btn_RestEffectsFade.Text = "Reset"
-        Me.btn_RestEffectsFade.UseVisualStyleBackColor = True
         '
         'sldr_Effects_Fade_Delay
         '
@@ -857,13 +846,6 @@ Partial Class Form1
         Me.lbl_Effects_FadeDelay.TabIndex = 15
         Me.lbl_Effects_FadeDelay.Text = "20"
         Me.lbl_Effects_FadeDelay.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
-        '
-        'pgrbr_Effects_Fade
-        '
-        Me.pgrbr_Effects_Fade.Location = New System.Drawing.Point(13, 86)
-        Me.pgrbr_Effects_Fade.Name = "pgrbr_Effects_Fade"
-        Me.pgrbr_Effects_Fade.Size = New System.Drawing.Size(315, 23)
-        Me.pgrbr_Effects_Fade.TabIndex = 14
         '
         'btn_Effects_FadeStart
         '
@@ -1121,6 +1103,15 @@ Partial Class Form1
         Me.SerialPort1.DtrEnable = True
         Me.SerialPort1.RtsEnable = True
         '
+        'btn_RestEffectsFade
+        '
+        Me.btn_RestEffectsFade.Location = New System.Drawing.Point(184, 19)
+        Me.btn_RestEffectsFade.Name = "btn_RestEffectsFade"
+        Me.btn_RestEffectsFade.Size = New System.Drawing.Size(52, 20)
+        Me.btn_RestEffectsFade.TabIndex = 19
+        Me.btn_RestEffectsFade.Text = "Reset"
+        Me.btn_RestEffectsFade.UseVisualStyleBackColor = True
+        '
         'Form1
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -1206,7 +1197,6 @@ Partial Class Form1
     Friend WithEvents btn_Effects_FadeStop As System.Windows.Forms.Button
     Friend WithEvents Label14 As System.Windows.Forms.Label
     Friend WithEvents lbl_Effects_FadeDelay As System.Windows.Forms.Label
-    Friend WithEvents pgrbr_Effects_Fade As System.Windows.Forms.ProgressBar
     Friend WithEvents btn_Effects_FadeStart As System.Windows.Forms.Button
     Friend WithEvents tbpg_Info As System.Windows.Forms.TabPage
     Friend WithEvents PictureBox2 As System.Windows.Forms.PictureBox
@@ -1223,7 +1213,6 @@ Partial Class Form1
     Friend WithEvents lbl_Colors_Alpha As System.Windows.Forms.Label
     Friend WithEvents lbl_Effects_FlashDelay As System.Windows.Forms.Label
     Friend WithEvents btn_RestEffectsFlash As System.Windows.Forms.Button
-    Friend WithEvents btn_RestEffectsFade As System.Windows.Forms.Button
     Friend WithEvents Label1 As System.Windows.Forms.Label
     Friend WithEvents lbl_Info_Version As System.Windows.Forms.Label
     Friend WithEvents lbl_Info_Copyright As System.Windows.Forms.Label
@@ -1240,5 +1229,6 @@ Partial Class Form1
     Friend WithEvents cbx_BaudrateOptions As System.Windows.Forms.ComboBox
     Friend WithEvents cbx_ComportOptions As System.Windows.Forms.ComboBox
     Friend WithEvents rbtn_Colors_black As System.Windows.Forms.RadioButton
+    Friend WithEvents btn_RestEffectsFade As System.Windows.Forms.Button
 
 End Class
