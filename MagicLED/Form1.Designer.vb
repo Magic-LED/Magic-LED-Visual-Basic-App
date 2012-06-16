@@ -58,7 +58,7 @@ Partial Class Form1
         Me.Label12 = New System.Windows.Forms.Label()
         Me.rbtn_Colors_red = New System.Windows.Forms.RadioButton()
         Me.tbpg_Effects = New System.Windows.Forms.TabPage()
-        Me.GroupBox5 = New System.Windows.Forms.GroupBox()
+        Me.gbx_flash = New System.Windows.Forms.GroupBox()
         Me.btn_RestEffectsFlash = New System.Windows.Forms.Button()
         Me.lbl_Effects_FlashDelay = New System.Windows.Forms.Label()
         Me.sldr_Effects_Flash_Delay = New MB.Controls.ColorSlider()
@@ -74,7 +74,8 @@ Partial Class Form1
         Me.chkbx_Effects_Flash_red = New System.Windows.Forms.CheckBox()
         Me.Label15 = New System.Windows.Forms.Label()
         Me.btn_Effects_FlashStart = New System.Windows.Forms.Button()
-        Me.GroupBox4 = New System.Windows.Forms.GroupBox()
+        Me.gbx_fade = New System.Windows.Forms.GroupBox()
+        Me.btn_RestEffectsFade = New System.Windows.Forms.Button()
         Me.sldr_Effects_Fade_Delay = New MB.Controls.ColorSlider()
         Me.btn_Effects_FadeStop = New System.Windows.Forms.Button()
         Me.Label14 = New System.Windows.Forms.Label()
@@ -105,7 +106,6 @@ Partial Class Form1
         Me.StatusStrip1 = New System.Windows.Forms.StatusStrip()
         Me.lbl_StatusLabel = New System.Windows.Forms.ToolStripStatusLabel()
         Me.SerialPort1 = New System.IO.Ports.SerialPort(Me.components)
-        Me.btn_RestEffectsFade = New System.Windows.Forms.Button()
         Me.tbctrl_1.SuspendLayout()
         Me.tbpg_Slider.SuspendLayout()
         Me.GroupBox2.SuspendLayout()
@@ -113,8 +113,8 @@ Partial Class Form1
         Me.tbpg_Colors.SuspendLayout()
         Me.GroupBox1.SuspendLayout()
         Me.tbpg_Effects.SuspendLayout()
-        Me.GroupBox5.SuspendLayout()
-        Me.GroupBox4.SuspendLayout()
+        Me.gbx_flash.SuspendLayout()
+        Me.gbx_fade.SuspendLayout()
         Me.tbpg_Info.SuspendLayout()
         Me.GroupBox6.SuspendLayout()
         CType(Me.PictureBox2, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -583,8 +583,8 @@ Partial Class Form1
         'tbpg_Effects
         '
         Me.tbpg_Effects.BackColor = System.Drawing.SystemColors.Control
-        Me.tbpg_Effects.Controls.Add(Me.GroupBox5)
-        Me.tbpg_Effects.Controls.Add(Me.GroupBox4)
+        Me.tbpg_Effects.Controls.Add(Me.gbx_flash)
+        Me.tbpg_Effects.Controls.Add(Me.gbx_fade)
         Me.tbpg_Effects.Location = New System.Drawing.Point(4, 22)
         Me.tbpg_Effects.Name = "tbpg_Effects"
         Me.tbpg_Effects.Padding = New System.Windows.Forms.Padding(3)
@@ -592,29 +592,29 @@ Partial Class Form1
         Me.tbpg_Effects.TabIndex = 2
         Me.tbpg_Effects.Text = "Effects"
         '
-        'GroupBox5
+        'gbx_flash
         '
-        Me.GroupBox5.Controls.Add(Me.btn_RestEffectsFlash)
-        Me.GroupBox5.Controls.Add(Me.lbl_Effects_FlashDelay)
-        Me.GroupBox5.Controls.Add(Me.sldr_Effects_Flash_Delay)
-        Me.GroupBox5.Controls.Add(Me.chkbx_Effects_Flash_white)
-        Me.GroupBox5.Controls.Add(Me.btn_Effects_FlashStop)
-        Me.GroupBox5.Controls.Add(Me.chkbx_Effects_Flash_yellow)
-        Me.GroupBox5.Controls.Add(Me.chkbx_Effects_Flash_pink)
-        Me.GroupBox5.Controls.Add(Me.chkbx_Effects_Flash_purple)
-        Me.GroupBox5.Controls.Add(Me.chkbx_Effects_Flash_blue)
-        Me.GroupBox5.Controls.Add(Me.chkbx_Effects_Flash_teal)
-        Me.GroupBox5.Controls.Add(Me.chkbx_Effects_Flash_green)
-        Me.GroupBox5.Controls.Add(Me.chkbx_Effects_Flash_orange)
-        Me.GroupBox5.Controls.Add(Me.chkbx_Effects_Flash_red)
-        Me.GroupBox5.Controls.Add(Me.Label15)
-        Me.GroupBox5.Controls.Add(Me.btn_Effects_FlashStart)
-        Me.GroupBox5.Location = New System.Drawing.Point(16, 163)
-        Me.GroupBox5.Name = "GroupBox5"
-        Me.GroupBox5.Size = New System.Drawing.Size(340, 155)
-        Me.GroupBox5.TabIndex = 17
-        Me.GroupBox5.TabStop = False
-        Me.GroupBox5.Text = "Flash"
+        Me.gbx_flash.Controls.Add(Me.btn_RestEffectsFlash)
+        Me.gbx_flash.Controls.Add(Me.lbl_Effects_FlashDelay)
+        Me.gbx_flash.Controls.Add(Me.sldr_Effects_Flash_Delay)
+        Me.gbx_flash.Controls.Add(Me.chkbx_Effects_Flash_white)
+        Me.gbx_flash.Controls.Add(Me.btn_Effects_FlashStop)
+        Me.gbx_flash.Controls.Add(Me.chkbx_Effects_Flash_yellow)
+        Me.gbx_flash.Controls.Add(Me.chkbx_Effects_Flash_pink)
+        Me.gbx_flash.Controls.Add(Me.chkbx_Effects_Flash_purple)
+        Me.gbx_flash.Controls.Add(Me.chkbx_Effects_Flash_blue)
+        Me.gbx_flash.Controls.Add(Me.chkbx_Effects_Flash_teal)
+        Me.gbx_flash.Controls.Add(Me.chkbx_Effects_Flash_green)
+        Me.gbx_flash.Controls.Add(Me.chkbx_Effects_Flash_orange)
+        Me.gbx_flash.Controls.Add(Me.chkbx_Effects_Flash_red)
+        Me.gbx_flash.Controls.Add(Me.Label15)
+        Me.gbx_flash.Controls.Add(Me.btn_Effects_FlashStart)
+        Me.gbx_flash.Location = New System.Drawing.Point(16, 163)
+        Me.gbx_flash.Name = "gbx_flash"
+        Me.gbx_flash.Size = New System.Drawing.Size(340, 155)
+        Me.gbx_flash.TabIndex = 17
+        Me.gbx_flash.TabStop = False
+        Me.gbx_flash.Text = "Flash"
         '
         'btn_RestEffectsFlash
         '
@@ -633,7 +633,7 @@ Partial Class Form1
         Me.lbl_Effects_FlashDelay.Name = "lbl_Effects_FlashDelay"
         Me.lbl_Effects_FlashDelay.Size = New System.Drawing.Size(53, 20)
         Me.lbl_Effects_FlashDelay.TabIndex = 19
-        Me.lbl_Effects_FlashDelay.Text = "20"
+        Me.lbl_Effects_FlashDelay.Text = "200"
         Me.lbl_Effects_FlashDelay.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
         '
         'sldr_Effects_Flash_Delay
@@ -647,8 +647,8 @@ Partial Class Form1
         Me.sldr_Effects_Flash_Delay.ElapsedOuterColor = System.Drawing.Color.Orange
         Me.sldr_Effects_Flash_Delay.LargeChange = CType(5UI, UInteger)
         Me.sldr_Effects_Flash_Delay.Location = New System.Drawing.Point(144, 45)
-        Me.sldr_Effects_Flash_Delay.Maximum = 20
-        Me.sldr_Effects_Flash_Delay.Minimum = 5
+        Me.sldr_Effects_Flash_Delay.Maximum = 500
+        Me.sldr_Effects_Flash_Delay.Minimum = 100
         Me.sldr_Effects_Flash_Delay.Name = "sldr_Effects_Flash_Delay"
         Me.sldr_Effects_Flash_Delay.RightToLeft = System.Windows.Forms.RightToLeft.Yes
         Me.sldr_Effects_Flash_Delay.Size = New System.Drawing.Size(138, 20)
@@ -656,7 +656,7 @@ Partial Class Form1
         Me.sldr_Effects_Flash_Delay.TabIndex = 19
         Me.sldr_Effects_Flash_Delay.Text = "ColorSlider6"
         Me.sldr_Effects_Flash_Delay.ThumbRoundRectSize = New System.Drawing.Size(8, 8)
-        Me.sldr_Effects_Flash_Delay.Value = 20
+        Me.sldr_Effects_Flash_Delay.Value = 200
         '
         'chkbx_Effects_Flash_white
         '
@@ -781,20 +781,29 @@ Partial Class Form1
         Me.btn_Effects_FlashStart.Text = "Start"
         Me.btn_Effects_FlashStart.UseVisualStyleBackColor = True
         '
-        'GroupBox4
+        'gbx_fade
         '
-        Me.GroupBox4.Controls.Add(Me.btn_RestEffectsFade)
-        Me.GroupBox4.Controls.Add(Me.sldr_Effects_Fade_Delay)
-        Me.GroupBox4.Controls.Add(Me.btn_Effects_FadeStop)
-        Me.GroupBox4.Controls.Add(Me.Label14)
-        Me.GroupBox4.Controls.Add(Me.lbl_Effects_FadeDelay)
-        Me.GroupBox4.Controls.Add(Me.btn_Effects_FadeStart)
-        Me.GroupBox4.Location = New System.Drawing.Point(16, 20)
-        Me.GroupBox4.Name = "GroupBox4"
-        Me.GroupBox4.Size = New System.Drawing.Size(340, 130)
-        Me.GroupBox4.TabIndex = 0
-        Me.GroupBox4.TabStop = False
-        Me.GroupBox4.Text = "Fade"
+        Me.gbx_fade.Controls.Add(Me.btn_RestEffectsFade)
+        Me.gbx_fade.Controls.Add(Me.sldr_Effects_Fade_Delay)
+        Me.gbx_fade.Controls.Add(Me.btn_Effects_FadeStop)
+        Me.gbx_fade.Controls.Add(Me.Label14)
+        Me.gbx_fade.Controls.Add(Me.lbl_Effects_FadeDelay)
+        Me.gbx_fade.Controls.Add(Me.btn_Effects_FadeStart)
+        Me.gbx_fade.Location = New System.Drawing.Point(16, 20)
+        Me.gbx_fade.Name = "gbx_fade"
+        Me.gbx_fade.Size = New System.Drawing.Size(340, 130)
+        Me.gbx_fade.TabIndex = 0
+        Me.gbx_fade.TabStop = False
+        Me.gbx_fade.Text = "Fade"
+        '
+        'btn_RestEffectsFade
+        '
+        Me.btn_RestEffectsFade.Location = New System.Drawing.Point(184, 19)
+        Me.btn_RestEffectsFade.Name = "btn_RestEffectsFade"
+        Me.btn_RestEffectsFade.Size = New System.Drawing.Size(52, 20)
+        Me.btn_RestEffectsFade.TabIndex = 19
+        Me.btn_RestEffectsFade.Text = "Reset"
+        Me.btn_RestEffectsFade.UseVisualStyleBackColor = True
         '
         'sldr_Effects_Fade_Delay
         '
@@ -1103,15 +1112,6 @@ Partial Class Form1
         Me.SerialPort1.DtrEnable = True
         Me.SerialPort1.RtsEnable = True
         '
-        'btn_RestEffectsFade
-        '
-        Me.btn_RestEffectsFade.Location = New System.Drawing.Point(184, 19)
-        Me.btn_RestEffectsFade.Name = "btn_RestEffectsFade"
-        Me.btn_RestEffectsFade.Size = New System.Drawing.Size(52, 20)
-        Me.btn_RestEffectsFade.TabIndex = 19
-        Me.btn_RestEffectsFade.Text = "Reset"
-        Me.btn_RestEffectsFade.UseVisualStyleBackColor = True
-        '
         'Form1
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -1131,10 +1131,10 @@ Partial Class Form1
         Me.GroupBox1.ResumeLayout(False)
         Me.GroupBox1.PerformLayout()
         Me.tbpg_Effects.ResumeLayout(False)
-        Me.GroupBox5.ResumeLayout(False)
-        Me.GroupBox5.PerformLayout()
-        Me.GroupBox4.ResumeLayout(False)
-        Me.GroupBox4.PerformLayout()
+        Me.gbx_flash.ResumeLayout(False)
+        Me.gbx_flash.PerformLayout()
+        Me.gbx_fade.ResumeLayout(False)
+        Me.gbx_fade.PerformLayout()
         Me.tbpg_Info.ResumeLayout(False)
         Me.GroupBox6.ResumeLayout(False)
         Me.GroupBox6.PerformLayout()
@@ -1180,7 +1180,7 @@ Partial Class Form1
     Friend WithEvents Label12 As System.Windows.Forms.Label
     Friend WithEvents rbtn_Colors_red As System.Windows.Forms.RadioButton
     Friend WithEvents tbpg_Effects As System.Windows.Forms.TabPage
-    Friend WithEvents GroupBox5 As System.Windows.Forms.GroupBox
+    Friend WithEvents gbx_flash As System.Windows.Forms.GroupBox
     Friend WithEvents chkbx_Effects_Flash_white As System.Windows.Forms.CheckBox
     Friend WithEvents btn_Effects_FlashStop As System.Windows.Forms.Button
     Friend WithEvents chkbx_Effects_Flash_yellow As System.Windows.Forms.CheckBox
@@ -1193,7 +1193,7 @@ Partial Class Form1
     Friend WithEvents chkbx_Effects_Flash_red As System.Windows.Forms.CheckBox
     Friend WithEvents Label15 As System.Windows.Forms.Label
     Friend WithEvents btn_Effects_FlashStart As System.Windows.Forms.Button
-    Friend WithEvents GroupBox4 As System.Windows.Forms.GroupBox
+    Friend WithEvents gbx_fade As System.Windows.Forms.GroupBox
     Friend WithEvents btn_Effects_FadeStop As System.Windows.Forms.Button
     Friend WithEvents Label14 As System.Windows.Forms.Label
     Friend WithEvents lbl_Effects_FadeDelay As System.Windows.Forms.Label

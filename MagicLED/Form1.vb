@@ -95,34 +95,34 @@ Public Class Form1
 
         Select Case True
             Case rbtn_Colors_blue.Checked
-                sendCommand("SC000", 5)
+                sendCommand("SC000")
                 Return
             Case rbtn_Colors_green.Checked
-                sendCommand("SC001", 5)
+                sendCommand("SC001")
                 Return
             Case rbtn_Colors_orange.Checked
-                sendCommand("SC002", 5)
+                sendCommand("SC002")
                 Return
             Case rbtn_Colors_pink.Checked
-                sendCommand("SC003", 5)
+                sendCommand("SC003")
                 Return
             Case rbtn_Colors_purple.Checked
-                sendCommand("SC004", 5)
+                sendCommand("SC004")
                 Return
             Case rbtn_Colors_red.Checked
-                sendCommand("SC005", 5)
+                sendCommand("SC005")
                 Return
             Case rbtn_Colors_teal.Checked
-                sendCommand("SC006", 5)
+                sendCommand("SC006")
                 Return
             Case rbtn_Colors_white.Checked
-                sendCommand("SC007", 5)
+                sendCommand("SC007")
                 Return
             Case rbtn_Colors_yellow.Checked
-                sendCommand("SC008", 5)
+                sendCommand("SC008")
                 Return
             Case rbtn_Colors_black.Checked
-                sendCommand("SC009", 5)
+                sendCommand("SC009")
                 Return
             Case Else
                 Return
@@ -134,7 +134,7 @@ Public Class Form1
 
     Private Sub sldr_Effects_Fade_Delay_Scroll(ByVal sender As System.Object, ByVal e As System.Windows.Forms.ScrollEventArgs) Handles sldr_Effects_Fade_Delay.Scroll
         lbl_Effects_FadeDelay.Text = sldr_Effects_Fade_Delay.Value
-        sendSliderCommand(sldr_Effects_Fade_Delay, "FS")
+        sendSliderCommand(sldr_Effects_Fade_Delay, "FD")
     End Sub
 
     Private Sub btn_RestEffectsFade_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btn_RestEffectsFade.Click
@@ -142,13 +142,15 @@ Public Class Form1
     End Sub
 
     Private Sub btn_Effects_FadeStart_Click(sender As System.Object, e As System.EventArgs) Handles btn_Effects_FadeStart.Click
-        sendCommand("TE01F", 5)
         sldr_Effects_Fade_Delay.Enabled = False
+        gbx_flash.Enabled = False
+        sendCommand("TEFA1")
     End Sub
 
     Private Sub btn_Effects_FadeStop_Click(sender As System.Object, e As System.EventArgs) Handles btn_Effects_FadeStop.Click
-        sendCommand("TE00F", 5)
         sldr_Effects_Fade_Delay.Enabled = True
+        gbx_flash.Enabled = True
+        sendCommand("TEFA0")
     End Sub
 
 #End Region
@@ -157,6 +159,7 @@ Public Class Form1
 
     Private Sub sldr_Effects_Flash_Delay_Scroll(ByVal sender As System.Object, ByVal e As System.Windows.Forms.ScrollEventArgs) Handles sldr_Effects_Flash_Delay.Scroll
         lbl_Effects_FlashDelay.Text = sldr_Effects_Flash_Delay.Value
+        sendSliderCommand(sldr_Effects_Flash_Delay.Value, "FS")
     End Sub
 
     Private Sub CheckFlashColors()
@@ -165,10 +168,14 @@ Public Class Form1
 
     Private Sub btn_Effects_FlashStart_Click(sender As System.Object, e As System.EventArgs) Handles btn_Effects_FlashStart.Click
         sldr_Effects_Flash_Delay.Enabled = False
+        gbx_fade.Enabled = False
+        sendCommand("TEFL1")
     End Sub
 
     Private Sub btn_Effects_FlashStop_Click(sender As System.Object, e As System.EventArgs) Handles btn_Effects_FlashStop.Click
         sldr_Effects_Flash_Delay.Enabled = True
+        gbx_fade.Enabled = True
+        sendCommand("TEFL0")
     End Sub
 
     Private Sub btn_RestEffectsFlash_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btn_RestEffectsFlash.Click
@@ -189,11 +196,11 @@ Public Class Form1
 
 #Region "Commands"
 
-    Private Sub sendCommand(ByVal Command As String, ByVal CommandLength As Integer)
+    Private Sub sendCommand(ByVal Command As String)
         Try
             If SerialPort1.IsOpen Then
                 Control.CheckForIllegalCrossThreadCalls = False
-                SerialPort1.Write(Command, 0, CommandLength)
+                SerialPort1.Write(Command, 0, 5)
             End If
         Catch ex As Exception
         End Try
@@ -201,13 +208,13 @@ Public Class Form1
 
     Private Sub sendSliderCommand(ByVal Slider As System.Object, ByVal Command As String)
         If (Slider.Value < 100 And Slider.Value > 10) Then
-            sendCommand(Command & "0" & Slider.Value, 5)
+            sendCommand(Command & "0" & Slider.Value)
             lbl_StatusLabel.Text = Command & "0" & Slider.Value
         ElseIf (Slider.Value < 10) Then
-            sendCommand(Command & "00" & Slider.Value, 5)
+            sendCommand(Command & "00" & Slider.Value)
             lbl_StatusLabel.Text = Command & "00" & Slider.Value
         Else
-            sendCommand(Command & Slider.Value, 5)
+            sendCommand(Command & Slider.Value)
             lbl_StatusLabel.Text = Command & Slider.Value
         End If
     End Sub
