@@ -9,6 +9,7 @@ Public Class Form1
     Dim ComPort As String
     Dim BaudRate As String
     Dim ColorFlash As String
+    Dim frmTerminal As Form2
 
     Private Sub Form1_Load(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles MyBase.Load
         ConfigData.Load(ConfigPath)
@@ -45,28 +46,30 @@ Public Class Form1
 
     Private Sub sldr_Slider_Red_Scroll(ByVal sender As System.Object, ByVal e As System.Windows.Forms.ScrollEventArgs) Handles sldr_Slider_Red.Scroll
         lbl_Slider_Red.Text = sldr_Slider_Red.Value
-        CheckColor(sldr_Slider_Red.Value, sldr_Slider_Green.Value, sldr_Slider_Blue.Value)
+        CheckColor(sldr_Slider_Alpha.Value, sldr_Slider_Red.Value, sldr_Slider_Green.Value, sldr_Slider_Blue.Value)
         sendSliderCommand(sldr_Slider_Red, "re")
     End Sub
 
     Private Sub sldr_Slider_Green_Scroll(ByVal sender As System.Object, ByVal e As System.Windows.Forms.ScrollEventArgs) Handles sldr_Slider_Green.Scroll
         lbl_Slider_Green.Text = sldr_Slider_Green.Value
-        CheckColor(sldr_Slider_Red.Value, sldr_Slider_Green.Value, sldr_Slider_Blue.Value)
+        CheckColor(sldr_Slider_Alpha.Value, sldr_Slider_Red.Value, sldr_Slider_Green.Value, sldr_Slider_Blue.Value)
         sendSliderCommand(sldr_Slider_Green, "gr")
     End Sub
 
     Private Sub sldr_Slider_Blue_Scroll(ByVal sender As System.Object, ByVal e As System.Windows.Forms.ScrollEventArgs) Handles sldr_Slider_Blue.Scroll
         lbl_Slider_Blue.Text = sldr_Slider_Blue.Value
-        CheckColor(sldr_Slider_Red.Value, sldr_Slider_Green.Value, sldr_Slider_Blue.Value)
+        CheckColor(sldr_Slider_Alpha.Value, sldr_Slider_Red.Value, sldr_Slider_Green.Value, sldr_Slider_Blue.Value)
         sendSliderCommand(sldr_Slider_Blue, "bl")
     End Sub
 
     Private Sub sldr_Slider_Alpha_Scroll(ByVal sender As System.Object, ByVal e As System.Windows.Forms.ScrollEventArgs) Handles sldr_Slider_Alpha.Scroll
         lbl_Slider_Alpha.Text = sldr_Slider_Alpha.Value
+        CheckColor(sldr_Slider_Alpha.Value, sldr_Slider_Red.Value, sldr_Slider_Green.Value, sldr_Slider_Blue.Value)
+        sendSliderCommand(sldr_Slider_Green, "al")
     End Sub
 
-    Private Sub CheckColor(ByVal Red As Integer, ByVal Green As Integer, ByVal Blue As Integer)
-        picbx_Slider_Color.BackColor = Color.FromArgb(Red, Green, Blue)
+    Private Sub CheckColor(ByVal Alpha As Integer, ByVal Red As Integer, ByVal Green As Integer, ByVal Blue As Integer)
+        picbx_Slider_Color.BackColor = Color.FromArgb(Alpha, Red, Green, Blue)
     End Sub
 
     Private Sub btn_ResetSlider_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btn_ResetSlider.Click
@@ -159,11 +162,43 @@ Public Class Form1
 
     Private Sub sldr_Effects_Flash_Delay_Scroll(ByVal sender As System.Object, ByVal e As System.Windows.Forms.ScrollEventArgs) Handles sldr_Effects_Flash_Delay.Scroll
         lbl_Effects_FlashDelay.Text = sldr_Effects_Flash_Delay.Value
-        sendSliderCommand(sldr_Effects_Flash_Delay.Value, "FS")
+        sendSliderCommand(sldr_Effects_Flash_Delay, "FS")
     End Sub
 
-    Private Sub CheckFlashColors()
+    Private Sub chkbx_Effects_Flash_red_CheckedChanged(sender As System.Object, e As System.EventArgs) Handles chkbx_Effects_Flash_red.CheckedChanged
+        sendCommand("FC00" & chkbx_Effects_Flash_red.CheckState)
+    End Sub
 
+    Private Sub chkbx_Effects_Flash_orange_CheckedChanged(sender As System.Object, e As System.EventArgs) Handles chkbx_Effects_Flash_orange.CheckedChanged
+        sendCommand("FC01" & chkbx_Effects_Flash_orange.CheckState)
+    End Sub
+
+    Private Sub chkbx_Effects_Flash_yellow_CheckedChanged(sender As System.Object, e As System.EventArgs) Handles chkbx_Effects_Flash_yellow.CheckedChanged
+        sendCommand("FC02" & chkbx_Effects_Flash_yellow.CheckState)
+    End Sub
+
+    Private Sub chkbx_Effects_Flash_green_CheckedChanged(sender As System.Object, e As System.EventArgs) Handles chkbx_Effects_Flash_green.CheckedChanged
+        sendCommand("FC03" & chkbx_Effects_Flash_green.CheckState)
+    End Sub
+
+    Private Sub chkbx_Effects_Flash_teal_CheckedChanged(sender As System.Object, e As System.EventArgs) Handles chkbx_Effects_Flash_teal.CheckedChanged
+        sendCommand("FC04" & chkbx_Effects_Flash_teal.CheckState)
+    End Sub
+
+    Private Sub chkbx_Effects_Flash_blue_CheckedChanged(sender As System.Object, e As System.EventArgs) Handles chkbx_Effects_Flash_blue.CheckedChanged
+        sendCommand("FC05" & chkbx_Effects_Flash_blue.CheckState)
+    End Sub
+
+    Private Sub chkbx_Effects_Flash_purple_CheckedChanged(sender As System.Object, e As System.EventArgs) Handles chkbx_Effects_Flash_purple.CheckedChanged
+        sendCommand("FC06" & chkbx_Effects_Flash_purple.CheckState)
+    End Sub
+
+    Private Sub chkbx_Effects_Flash_pink_CheckedChanged(sender As System.Object, e As System.EventArgs) Handles chkbx_Effects_Flash_pink.CheckedChanged
+        sendCommand("FC07" & chkbx_Effects_Flash_pink.CheckState)
+    End Sub
+
+    Private Sub chkbx_Effects_Flash_white_CheckedChanged(sender As System.Object, e As System.EventArgs) Handles chkbx_Effects_Flash_white.CheckedChanged
+        sendCommand("FC08" & chkbx_Effects_Flash_white.CheckState)
     End Sub
 
     Private Sub btn_Effects_FlashStart_Click(sender As System.Object, e As System.EventArgs) Handles btn_Effects_FlashStart.Click
@@ -219,14 +254,6 @@ Public Class Form1
         End If
     End Sub
 
-    Private Sub SerialPort1_DataReceived(ByVal sender As System.Object, ByVal e As System.IO.Ports.SerialDataReceivedEventArgs) Handles SerialPort1.DataReceived
-        Try
-            Control.CheckForIllegalCrossThreadCalls = False
-            SerialPort1.DiscardInBuffer()
-        Catch ex As Exception
-        End Try
-    End Sub
-
 #End Region
 
 #Region "Settings"
@@ -235,9 +262,11 @@ Public Class Form1
         Try
             If SerialPort1.IsOpen = False Then
                 SerialPort1.Open()
+                btn_OpenComOptions.BackColor = Color.LightPink
                 btn_OpenComOptions.Text = "Trennen"
             Else
                 SerialPort1.Close()
+                btn_OpenComOptions.BackColor = Color.LightGreen
                 btn_OpenComOptions.Text = "Verbinden"
             End If
         Catch ex As Exception
@@ -256,6 +285,22 @@ Public Class Form1
         End Try
     End Sub
 
-#End Region
+    Private Sub SerialPort1_DataReceived(ByVal sender As System.Object, ByVal e As System.IO.Ports.SerialDataReceivedEventArgs) Handles SerialPort1.DataReceived
+        Try
+            Control.CheckForIllegalCrossThreadCalls = False
+            frmTerminal.RichTextBox1.AppendText(SerialPort1.ReadLine & vbNewLine)
+            SerialPort1.DiscardInBuffer()
+        Catch ex As Exception
+        End Try
+    End Sub
 
+    Private Sub btn_OpenTerminal_Click(sender As System.Object, e As System.EventArgs) Handles btn_OpenTerminal.Click
+        If frmTerminal Is Nothing OrElse frmTerminal.IsDisposed Then
+            frmTerminal = New Form2
+        End If
+        If Not frmTerminal.Visible Then
+            frmTerminal.Show()
+        End If
+    End Sub
+#End Region
 End Class

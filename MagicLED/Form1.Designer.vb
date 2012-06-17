@@ -96,6 +96,7 @@ Partial Class Form1
         Me.Label1 = New System.Windows.Forms.Label()
         Me.tbpg_Options = New System.Windows.Forms.TabPage()
         Me.GroupBox3 = New System.Windows.Forms.GroupBox()
+        Me.btn_OpenTerminal = New System.Windows.Forms.Button()
         Me.cbx_BaudrateOptions = New System.Windows.Forms.ComboBox()
         Me.cbx_ComportOptions = New System.Windows.Forms.ComboBox()
         Me.btn_SaveOptions = New System.Windows.Forms.Button()
@@ -1014,6 +1015,7 @@ Partial Class Form1
         '
         'GroupBox3
         '
+        Me.GroupBox3.Controls.Add(Me.btn_OpenTerminal)
         Me.GroupBox3.Controls.Add(Me.cbx_BaudrateOptions)
         Me.GroupBox3.Controls.Add(Me.cbx_ComportOptions)
         Me.GroupBox3.Controls.Add(Me.btn_SaveOptions)
@@ -1027,6 +1029,15 @@ Partial Class Form1
         Me.GroupBox3.TabIndex = 1
         Me.GroupBox3.TabStop = False
         Me.GroupBox3.Text = "Options"
+        '
+        'btn_OpenTerminal
+        '
+        Me.btn_OpenTerminal.Location = New System.Drawing.Point(22, 118)
+        Me.btn_OpenTerminal.Name = "btn_OpenTerminal"
+        Me.btn_OpenTerminal.Size = New System.Drawing.Size(121, 23)
+        Me.btn_OpenTerminal.TabIndex = 13
+        Me.btn_OpenTerminal.Text = "Terminal"
+        Me.btn_OpenTerminal.UseVisualStyleBackColor = True
         '
         'cbx_BaudrateOptions
         '
@@ -1049,26 +1060,27 @@ Partial Class Form1
         '
         Me.btn_SaveOptions.Location = New System.Drawing.Point(149, 85)
         Me.btn_SaveOptions.Name = "btn_SaveOptions"
-        Me.btn_SaveOptions.Size = New System.Drawing.Size(121, 27)
+        Me.btn_SaveOptions.Size = New System.Drawing.Size(85, 27)
         Me.btn_SaveOptions.TabIndex = 6
         Me.btn_SaveOptions.Text = "Speichern"
         Me.btn_SaveOptions.UseVisualStyleBackColor = True
         '
         'btn_OpenComOptions
         '
+        Me.btn_OpenComOptions.BackColor = System.Drawing.Color.LightGreen
         Me.btn_OpenComOptions.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btn_OpenComOptions.Location = New System.Drawing.Point(22, 85)
         Me.btn_OpenComOptions.Name = "btn_OpenComOptions"
         Me.btn_OpenComOptions.Size = New System.Drawing.Size(121, 27)
         Me.btn_OpenComOptions.TabIndex = 5
         Me.btn_OpenComOptions.Text = "Verbinden"
-        Me.btn_OpenComOptions.UseVisualStyleBackColor = True
+        Me.btn_OpenComOptions.UseVisualStyleBackColor = False
         '
         'btn_ResetOptions
         '
-        Me.btn_ResetOptions.Location = New System.Drawing.Point(133, 255)
+        Me.btn_ResetOptions.Location = New System.Drawing.Point(240, 85)
         Me.btn_ResetOptions.Name = "btn_ResetOptions"
-        Me.btn_ResetOptions.Size = New System.Drawing.Size(75, 23)
+        Me.btn_ResetOptions.Size = New System.Drawing.Size(79, 27)
         Me.btn_ResetOptions.TabIndex = 4
         Me.btn_ResetOptions.Text = "Reset"
         Me.btn_ResetOptions.UseVisualStyleBackColor = True
@@ -1098,6 +1110,7 @@ Partial Class Form1
         Me.StatusStrip1.Name = "StatusStrip1"
         Me.StatusStrip1.RenderMode = System.Windows.Forms.ToolStripRenderMode.ManagerRenderMode
         Me.StatusStrip1.Size = New System.Drawing.Size(404, 22)
+        Me.StatusStrip1.SizingGrip = False
         Me.StatusStrip1.TabIndex = 5
         Me.StatusStrip1.Text = "StatusStrip1"
         '
@@ -1119,7 +1132,9 @@ Partial Class Form1
         Me.ClientSize = New System.Drawing.Size(404, 401)
         Me.Controls.Add(Me.StatusStrip1)
         Me.Controls.Add(Me.tbctrl_1)
+        Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle
         Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
+        Me.MaximizeBox = False
         Me.Name = "Form1"
         Me.Text = "MagicLED 2012"
         Me.tbctrl_1.ResumeLayout(False)
@@ -1230,5 +1245,6 @@ Partial Class Form1
     Friend WithEvents cbx_ComportOptions As System.Windows.Forms.ComboBox
     Friend WithEvents rbtn_Colors_black As System.Windows.Forms.RadioButton
     Friend WithEvents btn_RestEffectsFade As System.Windows.Forms.Button
+    Friend WithEvents btn_OpenTerminal As System.Windows.Forms.Button
 
 End Class
