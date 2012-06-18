@@ -10,6 +10,18 @@ Public Class Form1
     Dim BaudRate As String
     Dim ColorFlash As String
     Dim frmTerminal As Form2
+    Dim StaticColorCommand As String = "SC"
+    Dim FlashColorCommand As String = "FC"
+    Dim sldrAlphaCommand As String = "al"
+    Dim sldrRedCommand As String = "re"
+    Dim sldrBlueCommand As String = "bl"
+    Dim sldrGreenCommand As String = "gr"
+    Dim sldrFadeDelayCommand As String = "FD"
+    Dim sldrFlashSpeedCommand As String = "FS"
+    Dim startFadeEffektCommand As String = "TEFA1"
+    Dim stopFadeEffektCommand As String = "TEFA0"
+    Dim startFlashEffektCommand As String = "TEFL1"
+    Dim stopFlashEffektCommand As String = "TEFL0"
 
     Private Sub Form1_Load(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles MyBase.Load
         ConfigData.Load(ConfigPath)
@@ -47,25 +59,25 @@ Public Class Form1
     Private Sub sldr_Slider_Red_Scroll(ByVal sender As System.Object, ByVal e As System.Windows.Forms.ScrollEventArgs) Handles sldr_Slider_Red.Scroll
         lbl_Slider_Red.Text = sldr_Slider_Red.Value
         CheckColor(sldr_Slider_Alpha.Value, sldr_Slider_Red.Value, sldr_Slider_Green.Value, sldr_Slider_Blue.Value)
-        sendSliderCommand(sldr_Slider_Red, "re")
+        sendSliderCommand(sldr_Slider_Red, sldrRedCommand)
     End Sub
 
     Private Sub sldr_Slider_Green_Scroll(ByVal sender As System.Object, ByVal e As System.Windows.Forms.ScrollEventArgs) Handles sldr_Slider_Green.Scroll
         lbl_Slider_Green.Text = sldr_Slider_Green.Value
         CheckColor(sldr_Slider_Alpha.Value, sldr_Slider_Red.Value, sldr_Slider_Green.Value, sldr_Slider_Blue.Value)
-        sendSliderCommand(sldr_Slider_Green, "gr")
+        sendSliderCommand(sldr_Slider_Green, sldrGreenCommand)
     End Sub
 
     Private Sub sldr_Slider_Blue_Scroll(ByVal sender As System.Object, ByVal e As System.Windows.Forms.ScrollEventArgs) Handles sldr_Slider_Blue.Scroll
         lbl_Slider_Blue.Text = sldr_Slider_Blue.Value
         CheckColor(sldr_Slider_Alpha.Value, sldr_Slider_Red.Value, sldr_Slider_Green.Value, sldr_Slider_Blue.Value)
-        sendSliderCommand(sldr_Slider_Blue, "bl")
+        sendSliderCommand(sldr_Slider_Blue, sldrBlueCommand)
     End Sub
 
     Private Sub sldr_Slider_Alpha_Scroll(ByVal sender As System.Object, ByVal e As System.Windows.Forms.ScrollEventArgs) Handles sldr_Slider_Alpha.Scroll
         lbl_Slider_Alpha.Text = sldr_Slider_Alpha.Value
         CheckColor(sldr_Slider_Alpha.Value, sldr_Slider_Red.Value, sldr_Slider_Green.Value, sldr_Slider_Blue.Value)
-        sendSliderCommand(sldr_Slider_Green, "al")
+        sendSliderCommand(sldr_Slider_Green, sldrAlphaCommand)
     End Sub
 
     Private Sub CheckColor(ByVal Alpha As Integer, ByVal Red As Integer, ByVal Green As Integer, ByVal Blue As Integer)
@@ -85,10 +97,11 @@ Public Class Form1
 
     Private Sub sldr_Colors_Alpha_Scroll(ByVal sender As System.Object, ByVal e As System.Windows.Forms.ScrollEventArgs) Handles sldr_Colors_Alpha.Scroll
         lbl_Colors_Alpha.Text = sldr_Colors_Alpha.Value
+        sendSliderCommand(sldr_Colors_Alpha, sldrAlphaCommand)
     End Sub
 
     Private Sub btn_RestColors_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btn_RestColors.Click
-        rbtn_Colors_white.Checked = True
+        rbtn_Colors_black.Checked = True
         sldr_Colors_Alpha.Value = sldr_Colors_Alpha.Maximum
     End Sub
 
@@ -98,34 +111,34 @@ Public Class Form1
 
         Select Case True
             Case rbtn_Colors_blue.Checked
-                sendCommand("SC000")
+                sendCommand(StaticColorCommand & "000")
                 Return
             Case rbtn_Colors_green.Checked
-                sendCommand("SC001")
+                sendCommand(StaticColorCommand & "001")
                 Return
             Case rbtn_Colors_orange.Checked
-                sendCommand("SC002")
+                sendCommand(StaticColorCommand & "002")
                 Return
             Case rbtn_Colors_pink.Checked
-                sendCommand("SC003")
+                sendCommand(StaticColorCommand & "003")
                 Return
             Case rbtn_Colors_purple.Checked
-                sendCommand("SC004")
+                sendCommand(StaticColorCommand & "004")
                 Return
             Case rbtn_Colors_red.Checked
-                sendCommand("SC005")
+                sendCommand(StaticColorCommand & "005")
                 Return
             Case rbtn_Colors_teal.Checked
-                sendCommand("SC006")
+                sendCommand(StaticColorCommand & "006")
                 Return
             Case rbtn_Colors_white.Checked
-                sendCommand("SC007")
+                sendCommand(StaticColorCommand & "007")
                 Return
             Case rbtn_Colors_yellow.Checked
-                sendCommand("SC008")
+                sendCommand(StaticColorCommand & "008")
                 Return
             Case rbtn_Colors_black.Checked
-                sendCommand("SC009")
+                sendCommand(StaticColorCommand & "009")
                 Return
             Case Else
                 Return
@@ -137,7 +150,7 @@ Public Class Form1
 
     Private Sub sldr_Effects_Fade_Delay_Scroll(ByVal sender As System.Object, ByVal e As System.Windows.Forms.ScrollEventArgs) Handles sldr_Effects_Fade_Delay.Scroll
         lbl_Effects_FadeDelay.Text = sldr_Effects_Fade_Delay.Value
-        sendSliderCommand(sldr_Effects_Fade_Delay, "FD")
+        sendSliderCommand(sldr_Effects_Fade_Delay, sldrFadeDelayCommand)
     End Sub
 
     Private Sub btn_RestEffectsFade_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btn_RestEffectsFade.Click
@@ -147,13 +160,13 @@ Public Class Form1
     Private Sub btn_Effects_FadeStart_Click(sender As System.Object, e As System.EventArgs) Handles btn_Effects_FadeStart.Click
         sldr_Effects_Fade_Delay.Enabled = False
         gbx_flash.Enabled = False
-        sendCommand("TEFA1")
+        sendCommand(startFadeEffektCommand)
     End Sub
 
     Private Sub btn_Effects_FadeStop_Click(sender As System.Object, e As System.EventArgs) Handles btn_Effects_FadeStop.Click
         sldr_Effects_Fade_Delay.Enabled = True
         gbx_flash.Enabled = True
-        sendCommand("TEFA0")
+        sendCommand(stopFadeEffektCommand)
     End Sub
 
 #End Region
@@ -162,55 +175,55 @@ Public Class Form1
 
     Private Sub sldr_Effects_Flash_Delay_Scroll(ByVal sender As System.Object, ByVal e As System.Windows.Forms.ScrollEventArgs) Handles sldr_Effects_Flash_Delay.Scroll
         lbl_Effects_FlashDelay.Text = sldr_Effects_Flash_Delay.Value
-        sendSliderCommand(sldr_Effects_Flash_Delay, "FS")
+        sendSliderCommand(sldr_Effects_Flash_Delay, sldrFlashSpeedCommand)
     End Sub
 
     Private Sub chkbx_Effects_Flash_red_CheckedChanged(sender As System.Object, e As System.EventArgs) Handles chkbx_Effects_Flash_red.CheckedChanged
-        sendCommand("FC00" & chkbx_Effects_Flash_red.CheckState)
+        sendCommand(FlashColorCommand & "00" & chkbx_Effects_Flash_red.CheckState)
     End Sub
 
     Private Sub chkbx_Effects_Flash_orange_CheckedChanged(sender As System.Object, e As System.EventArgs) Handles chkbx_Effects_Flash_orange.CheckedChanged
-        sendCommand("FC01" & chkbx_Effects_Flash_orange.CheckState)
+        sendCommand(FlashColorCommand & "01" & chkbx_Effects_Flash_orange.CheckState)
     End Sub
 
     Private Sub chkbx_Effects_Flash_yellow_CheckedChanged(sender As System.Object, e As System.EventArgs) Handles chkbx_Effects_Flash_yellow.CheckedChanged
-        sendCommand("FC02" & chkbx_Effects_Flash_yellow.CheckState)
+        sendCommand(FlashColorCommand & "02" & chkbx_Effects_Flash_yellow.CheckState)
     End Sub
 
     Private Sub chkbx_Effects_Flash_green_CheckedChanged(sender As System.Object, e As System.EventArgs) Handles chkbx_Effects_Flash_green.CheckedChanged
-        sendCommand("FC03" & chkbx_Effects_Flash_green.CheckState)
+        sendCommand(FlashColorCommand & "03" & chkbx_Effects_Flash_green.CheckState)
     End Sub
 
     Private Sub chkbx_Effects_Flash_teal_CheckedChanged(sender As System.Object, e As System.EventArgs) Handles chkbx_Effects_Flash_teal.CheckedChanged
-        sendCommand("FC04" & chkbx_Effects_Flash_teal.CheckState)
+        sendCommand(FlashColorCommand & "04" & chkbx_Effects_Flash_teal.CheckState)
     End Sub
 
     Private Sub chkbx_Effects_Flash_blue_CheckedChanged(sender As System.Object, e As System.EventArgs) Handles chkbx_Effects_Flash_blue.CheckedChanged
-        sendCommand("FC05" & chkbx_Effects_Flash_blue.CheckState)
+        sendCommand(FlashColorCommand & "05" & chkbx_Effects_Flash_blue.CheckState)
     End Sub
 
     Private Sub chkbx_Effects_Flash_purple_CheckedChanged(sender As System.Object, e As System.EventArgs) Handles chkbx_Effects_Flash_purple.CheckedChanged
-        sendCommand("FC06" & chkbx_Effects_Flash_purple.CheckState)
+        sendCommand(FlashColorCommand & "06" & chkbx_Effects_Flash_purple.CheckState)
     End Sub
 
     Private Sub chkbx_Effects_Flash_pink_CheckedChanged(sender As System.Object, e As System.EventArgs) Handles chkbx_Effects_Flash_pink.CheckedChanged
-        sendCommand("FC07" & chkbx_Effects_Flash_pink.CheckState)
+        sendCommand(FlashColorCommand & "07" & chkbx_Effects_Flash_pink.CheckState)
     End Sub
 
     Private Sub chkbx_Effects_Flash_white_CheckedChanged(sender As System.Object, e As System.EventArgs) Handles chkbx_Effects_Flash_white.CheckedChanged
-        sendCommand("FC08" & chkbx_Effects_Flash_white.CheckState)
+        sendCommand(FlashColorCommand & "08" & chkbx_Effects_Flash_white.CheckState)
     End Sub
 
     Private Sub btn_Effects_FlashStart_Click(sender As System.Object, e As System.EventArgs) Handles btn_Effects_FlashStart.Click
         sldr_Effects_Flash_Delay.Enabled = False
         gbx_fade.Enabled = False
-        sendCommand("TEFL1")
+        sendCommand(startFlashEffektCommand)
     End Sub
 
     Private Sub btn_Effects_FlashStop_Click(sender As System.Object, e As System.EventArgs) Handles btn_Effects_FlashStop.Click
         sldr_Effects_Flash_Delay.Enabled = True
         gbx_fade.Enabled = True
-        sendCommand("TEFL0")
+        sendCommand(stopFlashEffektCommand)
     End Sub
 
     Private Sub btn_RestEffectsFlash_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btn_RestEffectsFlash.Click
@@ -227,7 +240,6 @@ Public Class Form1
     End Sub
 
 #End Region
-
 
 #Region "Commands"
 
