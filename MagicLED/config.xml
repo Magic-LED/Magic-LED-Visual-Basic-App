@@ -1,5 +1,0 @@
-﻿<?xml version="1.0" encoding="utf-8" ?>
-<Systemconfig>
-  <ComPort>COM3</ComPort>
-  <BaudRate>115200</BaudRate>
-</Systemconfig>

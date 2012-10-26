@@ -3,10 +3,10 @@
   <Profiles />
   <Settings>
     <Setting Name="ComPort" Type="System.String" Scope="User">
-      <Value Profile="(Default)" />
+      <Value Profile="(Default)">COM0</Value>
     </Setting>
-    <Setting Name="BaudRate" Type="System.Int32" Scope="User">
-      <Value Profile="(Default)">0</Value>
+    <Setting Name="BaudRate" Type="System.String" Scope="User">
+      <Value Profile="(Default)">9600</Value>
     </Setting>
   </Settings>
 </SettingsFile>
