@@ -11,8 +11,8 @@ Imports System.Runtime.InteropServices
 <Assembly: AssemblyTitle("MagicLED")> 
 <Assembly: AssemblyDescription("LED Strip Control GUI for Arduino System")> 
 <Assembly: AssemblyCompany("M.Koch, D.Gruber")> 
-<Assembly: AssemblyProduct("MagicLED 2012")> 
-<Assembly: AssemblyCopyright("Copyright ©  2012")> 
+<Assembly: AssemblyProduct("MagicLED 2012-2013")> 
+<Assembly: AssemblyCopyright("Copyright ©  2012-2013")> 
 <Assembly: AssemblyTrademark("")> 
 
 <Assembly: ComVisible(False)> 
